@@ -1,0 +1,21 @@
+$body-color: #F1F3F3;
+$white: #ffffff;
+$black: #000000;
+$dark-gray: #293e52;
+$default-gray: #383838;
+$error-color: #ff5858;
+$highlight-color: #fbf2b3;
+
+$green: #52cc6c;
+$blue: #0074de;
+$dark-gray2: #555555;
+$light-gray: #8c8d8f;
+$light-gray2: #d0dcec;
+$light-gray3: #819cb5;
+
+$primary-color: $blue;
+$text-color: $dark-gray;
+
+:export {
+  bodyColor: $body-color;
+}

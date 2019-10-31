@@ -3,17 +3,1054 @@
 exports[`<HomePage /> should render correctly 1`] = `
 initialize {
   "0": Object {
-    "attribs": Object {},
+    "attribs": Object {
+      "class": "content-header",
+    },
     "children": Array [
       Object {
-        "data": "teste",
-        "next": null,
+        "attribs": Object {
+          "class": "content-header__container",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "content-header__title",
+            },
+            "children": Array [
+              Object {
+                "data": "Empresa XPTO",
+                "next": Object {
+                  "attribs": Object {
+                    "class": "content-header__title-complement",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": " - Conheça todos os nossos produtos",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "span",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+              Object {
+                "attribs": Object {
+                  "class": "content-header__title-complement",
+                },
+                "children": Array [
+                  Object {
+                    "data": " - Conheça todos os nossos produtos",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": Object {
+                  "data": "Empresa XPTO",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+            ],
+            "name": "h1",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {
+                "class": "content-header__start-enhancer",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "start",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "p",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {
+                  "class": "content-header__end-enhancer",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "end",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "p",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {
+              "class": "content-header__start-enhancer",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "start",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "p",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {
+                "class": "content-header__end-enhancer",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "end",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "p",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "content-header__title",
+              },
+              "children": Array [
+                Object {
+                  "data": "Empresa XPTO",
+                  "next": Object {
+                    "attribs": Object {
+                      "class": "content-header__title-complement",
+                    },
+                    "children": Array [
+                      Object {
+                        "data": " - Conheça todos os nossos produtos",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "span",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                    },
+                  },
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+                Object {
+                  "attribs": Object {
+                    "class": "content-header__title-complement",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": " - Conheça todos os nossos produtos",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "span",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": Object {
+                    "data": "Empresa XPTO",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+              ],
+              "name": "h1",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {
+              "class": "content-header__end-enhancer",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "end",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "p",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "content-header__start-enhancer",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "start",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "p",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "content-header__title",
+                },
+                "children": Array [
+                  Object {
+                    "data": "Empresa XPTO",
+                    "next": Object {
+                      "attribs": Object {
+                        "class": "content-header__title-complement",
+                      },
+                      "children": Array [
+                        Object {
+                          "data": " - Conheça todos os nossos produtos",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "text",
+                        },
+                      ],
+                      "name": "span",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": [Circular],
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                      },
+                    },
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                  Object {
+                    "attribs": Object {
+                      "class": "content-header__title-complement",
+                    },
+                    "children": Array [
+                      Object {
+                        "data": " - Conheça todos os nossos produtos",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "span",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": Object {
+                      "data": "Empresa XPTO",
+                      "next": [Circular],
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                    },
+                  },
+                ],
+                "name": "h1",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {
+            "class": "content-header__description",
+          },
+          "children": Array [
+            Object {
+              "data": "Listagem de produtos - clique no produto desejado para saber mais",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "p",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
         "parent": [Circular],
         "prev": null,
-        "type": "text",
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {
+          "class": "content-header__description",
+        },
+        "children": Array [
+          Object {
+            "data": "Listagem de produtos - clique no produto desejado para saber mais",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "p",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "content-header__container",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "content-header__title",
+              },
+              "children": Array [
+                Object {
+                  "data": "Empresa XPTO",
+                  "next": Object {
+                    "attribs": Object {
+                      "class": "content-header__title-complement",
+                    },
+                    "children": Array [
+                      Object {
+                        "data": " - Conheça todos os nossos produtos",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "span",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                    },
+                  },
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+                Object {
+                  "attribs": Object {
+                    "class": "content-header__title-complement",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": " - Conheça todos os nossos produtos",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "span",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": Object {
+                    "data": "Empresa XPTO",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+              ],
+              "name": "h1",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {
+                  "class": "content-header__start-enhancer",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "start",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "p",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Object {
+                  "attribs": Object {
+                    "class": "content-header__end-enhancer",
+                  },
+                  "children": Array [
+                    Object {
+                      "attribs": Object {},
+                      "children": Array [
+                        Object {
+                          "data": "end",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "text",
+                        },
+                      ],
+                      "name": "p",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                      "x-attribsNamespace": Object {},
+                      "x-attribsPrefix": Object {},
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {
+                "class": "content-header__start-enhancer",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "start",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "p",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {
+                  "class": "content-header__end-enhancer",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "end",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "p",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "content-header__title",
+                },
+                "children": Array [
+                  Object {
+                    "data": "Empresa XPTO",
+                    "next": Object {
+                      "attribs": Object {
+                        "class": "content-header__title-complement",
+                      },
+                      "children": Array [
+                        Object {
+                          "data": " - Conheça todos os nossos produtos",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "text",
+                        },
+                      ],
+                      "name": "span",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": [Circular],
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                      },
+                    },
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                  Object {
+                    "attribs": Object {
+                      "class": "content-header__title-complement",
+                    },
+                    "children": Array [
+                      Object {
+                        "data": " - Conheça todos os nossos produtos",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "span",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": Object {
+                      "data": "Empresa XPTO",
+                      "next": [Circular],
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                    },
+                  },
+                ],
+                "name": "h1",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {
+                "class": "content-header__end-enhancer",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "end",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "p",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "content-header__start-enhancer",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "start",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "p",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {
+                    "class": "content-header__title",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": "Empresa XPTO",
+                      "next": Object {
+                        "attribs": Object {
+                          "class": "content-header__title-complement",
+                        },
+                        "children": Array [
+                          Object {
+                            "data": " - Conheça todos os nossos produtos",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "text",
+                          },
+                        ],
+                        "name": "span",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": [Circular],
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "class": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "class": undefined,
+                        },
+                      },
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                    Object {
+                      "attribs": Object {
+                        "class": "content-header__title-complement",
+                      },
+                      "children": Array [
+                        Object {
+                          "data": " - Conheça todos os nossos produtos",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "text",
+                        },
+                      ],
+                      "name": "span",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": Object {
+                        "data": "Empresa XPTO",
+                        "next": [Circular],
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                      },
+                    },
+                  ],
+                  "name": "h1",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
       },
     ],
-    "name": "p",
+    "name": "header",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
     "parent": null,
@@ -33,8 +1070,12 @@ initialize {
       "x-attribsPrefix": Object {},
     },
     "type": "tag",
-    "x-attribsNamespace": Object {},
-    "x-attribsPrefix": Object {},
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
   },
   "_root": [Circular],
   "length": 1,

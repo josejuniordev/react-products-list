@@ -1,0 +1,38 @@
+@import "../../../styles/colors";
+@import "../../../styles/bem";
+
+.content-header {
+  color: inherit;
+  border-bottom: 1px solid $separator-color;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+
+  @include element(title) {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-right: 15px;
+  }
+
+  @include element(title-complement) {
+    font-size: inherit;
+    font-weight: lighter;
+  }
+
+  @include element(description) {
+    color: $secondary-text-color;
+  }
+
+  @include element(container) {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  @include element(start-enhancer) {
+    margin-right: 15px;
+  }
+
+  @include element(end-enhancer) {
+    flex: 2;
+    text-align: right;
+  }
+}

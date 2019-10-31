@@ -5,15 +5,23 @@ import {Client as Styletron} from 'styletron-engine-atomic';
 import history from './history';
 import ContentBody from './components/layout/content-body/ContentBody';
 import { Provider as StyletronProvider } from 'styletron-react';
+import { connect } from 'react-redux';
+import { fetchProducts } from './ducks/products';
 
 const HomePage = React.lazy(() => import('./pages/HomePage'));
 
 const engine = new Styletron();
 
-function App() {
+export function App(
+  {
+    callFetchProducts,
+  }
+) {
 
   useEffect(() => {
+    callFetchProducts();
   }, []);
+
   return (
     <StyletronProvider value={engine}>
       <ContentBody>
@@ -33,4 +41,15 @@ function App() {
   );
 }
 
-export default App;
+export const mapDispatchToProps = dispatch => {
+  return {
+    callFetchProducts() {
+      dispatch(fetchProducts());
+    }
+  }
+};
+
+export default connect(
+  false,
+  mapDispatchToProps,
+)(App);

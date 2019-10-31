@@ -5,7 +5,7 @@ import productsAPI from '../integrations/ProductsAPI';
 function* fetchProductsSaga() {
   try {
     const products = yield call(productsAPI.getAll);
-    console.log('products', products)
+
     if (products) {
       yield put(fetchProductsSuccess(products.produtos));
     }

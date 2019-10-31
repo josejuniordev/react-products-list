@@ -1,9 +1,9 @@
 import { render } from 'enzyme';
 import React from 'react';
-import HomePage from './HomePage';
+import {HomePage} from './HomePage';
 
 describe('<HomePage />', () => {
-  const rendered = render(<HomePage/>);
+  const rendered = render(<HomePage products={[]}/>);
 
   it('should render correctly', () => {
     expect(rendered).toMatchSnapshot();

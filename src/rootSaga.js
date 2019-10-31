@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
-import products from './ducks/products';
+import { all, fork } from 'redux-saga/effects';
+import productsSaga from './sagas/productsSaga';
 
-const rootReducer = combineReducers({
-  products,
-});
-
-export default rootReducer;
+export default function* rootSaga() {
+  yield all([
+    fork(productsSaga),
+  ])
+}

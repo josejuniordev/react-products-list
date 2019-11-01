@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Product from '../../../classes/Product';
+import Switch from '../../switch/Switch';
 import './ProductCard.scss';
 
 function ProductCard(
@@ -15,6 +16,7 @@ function ProductCard(
         <h3>Promoção</h3>
       </div>
       <div className="product-card__body">
+        <Switch  />
         <h2 className='product-card__name'>{product.name}</h2>
         <p className='product-card__description'>{product.shortDescription}</p>
       </div>

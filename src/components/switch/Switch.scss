@@ -7,7 +7,12 @@
   position: relative;
 
   @include element(label) {
-    font: 12px/21px;
+    font-size: 12px;
+    line-height: 21px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     color: $light-gray;
     cursor: pointer;
   }

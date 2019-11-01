@@ -12,17 +12,20 @@ function Switch(
   const [id] = useState(+new Date());
   const [checkedState, setCheckedState] = useState(checked);
 
-  function onChangeHandler(event) {
-    const isChecked = event.target.checked;
+  function onChangeHandler(isChecked) {
     onChange(isChecked);
     setCheckedState(isChecked);
   }
 
+  function onClickHandler() {
+    onChangeHandler(!checkedState);
+  }
+
   return (
     <div className='switch-checkbox'>
-      <input checked={checkedState} onChange={onChangeHandler} id={id} className='switch-checkbox__input' type="checkbox"/>
+      <input checked={checkedState} onChange={(event) => onChangeHandler(event.target.checked)} id={id} className='switch-checkbox__input' type="checkbox"/>
       <label htmlFor={id} className='switch-checkbox__switch'></label>
-      <span className='switch-checkbox__label'>{label}</span>
+      <span onClick={onClickHandler} className='switch-checkbox__label'>{label}</span>
     </div>
   )
 }

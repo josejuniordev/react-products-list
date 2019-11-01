@@ -16,7 +16,9 @@ function ProductCard(
         <h3>Promoção</h3>
       </div>
       <div className="product-card__body">
-        <Switch  />
+        <Switch
+          label='tornar favorito'
+        />
         <h2 className='product-card__name'>{product.name}</h2>
         <p className='product-card__description'>{product.shortDescription}</p>
       </div>

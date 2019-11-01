@@ -9,6 +9,7 @@
   @include element(label) {
     font: 12px/21px;
     color: $light-gray;
+    cursor: pointer;
   }
 
   @include element(input) {
@@ -23,6 +24,7 @@
 
     + .switch-checkbox__switch {
       color: $white;
+      cursor: pointer;
       height: $switch-height;
       background: $disabled-color;
       width: $switch-width;

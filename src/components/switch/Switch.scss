@@ -1,0 +1,65 @@
+@import "../../styles/bem";
+@import "../../styles/colors";
+
+.switch-checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  @include element(label) {
+    font: 12px/21px;
+    color: $light-gray;
+  }
+
+  @include element(input) {
+    width: 0;
+    height: 0;
+    position: absolute;
+    overflow: hidden;
+
+    $switch-spacing: 2px;
+    $switch-height: 10px;
+    $switch-width: 20px;
+
+    + .switch-checkbox__switch {
+      color: $white;
+      height: $switch-height;
+      background: $disabled-color;
+      width: $switch-width;
+      display: block;
+      position: relative;
+      border-radius: 20px;
+      margin-right: 8px;
+      -webkit-transition: all .2s;
+      -moz-transition: all .2s;
+      -ms-transition: all .2s;
+      -o-transition: all .2s;
+
+      &:after {
+        $dimension: $switch-height - $switch-spacing * 2;
+        content: '';
+        background: currentColor;
+        top: $switch-spacing;
+        left: $switch-width - $switch-spacing - $dimension;
+        width: $dimension;
+        height: $dimension;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        position: absolute;
+        -webkit-transition: all .2s;
+        -moz-transition: all .2s;
+        -ms-transition: all .2s;
+        -o-transition: all .2s;
+      }
+    }
+
+    &:checked + .switch-checkbox__switch {
+      background: $blue;
+
+      &:after {
+        left: $switch-spacing;
+      }
+    }
+  }
+}

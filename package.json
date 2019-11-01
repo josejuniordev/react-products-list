@@ -2,14 +2,13 @@
   "name": "react-producs-list",
   "version": "0.1.0",
   "engines": {
-    "node": "11.12.0"
+    "node": "12.3.1"
   },
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
     "history": "^4.10.1",
     "manrope": "^2.0.0",
-    "manrope-font": "git+https://git@github.com/sharanda/manrope.git",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
@@ -30,7 +29,9 @@
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --coverage",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,6 +49,12 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/react": "^5.2.5",
+    "babel-loader": "^8.0.6",
     "dotenv": "^8.1.0",
     "dotenv-expand": "^5.1.0",
     "enzyme": "^3.10.0",

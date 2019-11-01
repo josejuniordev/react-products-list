@@ -1,0 +1,13 @@
+@import "../../styles/bem";
+@import "../../styles/colors";
+
+.amount-favorite-info {
+  display: flex;
+  justify-content: space-between;
+
+  @include element(amount) {
+    color: $purple;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+}

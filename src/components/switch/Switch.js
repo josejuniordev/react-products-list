@@ -6,7 +6,7 @@ function Switch(
   {
     checked,
     label,
-    onChange,
+    onChange = () => {},
   }
 ) {
   const [id] = useState(+new Date());
@@ -39,7 +39,6 @@ Switch.propTypes = {
 Switch.defaultProps = {
   checked: false,
   label: '',
-  onChange: () => {},
 };
 
 export default Switch;

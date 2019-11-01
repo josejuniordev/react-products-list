@@ -3,9 +3,11 @@
 exports[`<ProductsList /> should render correctly 1`] = `
 initialize {
   "0": Object {
-    "attribs": Object {},
+    "attribs": Object {
+      "class": "products-list",
+    },
     "children": Array [],
-    "name": "div",
+    "name": "section",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
     "parent": null,
@@ -25,8 +27,12 @@ initialize {
       "x-attribsPrefix": Object {},
     },
     "type": "tag",
-    "x-attribsNamespace": Object {},
-    "x-attribsPrefix": Object {},
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
   },
   "_root": [Circular],
   "length": 1,

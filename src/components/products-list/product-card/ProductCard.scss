@@ -1,0 +1,28 @@
+@import "../../../styles/colors";
+@import "../../../styles/bem";
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+
+  @include element(image-container) {
+    background: center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 190px;
+  }
+
+  @include element(name) {
+    margin: 0;
+  }
+
+  @include element(description) {
+    margin: 0;
+  }
+
+  @include element(body) {
+    background: $white;
+    padding: 20px 30px;
+    flex: 2;
+  }
+}

@@ -1,0 +1,23 @@
+@import "../../styles/bem";
+
+.products-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &:after {
+    content: '';
+    width: 30%;
+    height: 1px !important;
+    justify-self: flex-start;
+  }
+
+  @include element(item) {
+    width: 30%;
+    max-width: 350px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: stretch;
+  }
+}
+

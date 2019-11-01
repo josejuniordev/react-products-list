@@ -1053,9 +1053,11 @@ initialize {
     "name": "header",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": Object {
-      "attribs": Object {},
+      "attribs": Object {
+        "class": "products-list",
+      },
       "children": Array [],
-      "name": "div",
+      "name": "section",
       "namespace": "http://www.w3.org/1999/xhtml",
       "next": null,
       "parent": null,
@@ -1076,8 +1078,12 @@ initialize {
         "x-attribsPrefix": Object {},
       },
       "type": "tag",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
+      "x-attribsNamespace": Object {
+        "class": undefined,
+      },
+      "x-attribsPrefix": Object {
+        "class": undefined,
+      },
     },
     "parent": null,
     "prev": null,
@@ -1086,17 +1092,23 @@ initialize {
       "children": Array [
         [Circular],
         Object {
-          "attribs": Object {},
+          "attribs": Object {
+            "class": "products-list",
+          },
           "children": Array [],
-          "name": "div",
+          "name": "section",
           "namespace": "http://www.w3.org/1999/xhtml",
           "next": null,
           "parent": null,
           "prev": [Circular],
           "root": [Circular],
           "type": "tag",
-          "x-attribsNamespace": Object {},
-          "x-attribsPrefix": Object {},
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
         },
       ],
       "name": "root",
@@ -1117,9 +1129,11 @@ initialize {
     },
   },
   "1": Object {
-    "attribs": Object {},
+    "attribs": Object {
+      "class": "products-list",
+    },
     "children": Array [],
-    "name": "div",
+    "name": "section",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
     "parent": null,
@@ -3276,8 +3290,12 @@ initialize {
       "x-attribsPrefix": Object {},
     },
     "type": "tag",
-    "x-attribsNamespace": Object {},
-    "x-attribsPrefix": Object {},
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
   },
   "_root": [Circular],
   "length": 2,

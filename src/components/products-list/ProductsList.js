@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ProductCard from './product-card/ProductCard';
+import Product from '../../classes/Product';
+import './ProductsList.scss';
 
 function ProductsList(
   {
@@ -7,18 +10,24 @@ function ProductsList(
   }
 ) {
   return (
-    <div>
+    <section className='products-list'>
       {
         products.map(product => {
-          return <div>{product.nome}</div>;
+          return (
+            <div className="products-list__item">
+              <ProductCard key={product.id} product={product} />
+            </div>
+          );
         })
       }
-    </div>
+    </section>
   )
 }
 
 ProductsList.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.object),
+  products: PropTypes.arrayOf(
+    PropTypes.instanceOf(Product)
+  ),
 };
 
 ProductsList.defaultProps = {

@@ -10,6 +10,7 @@
     background-size: cover;
     overflow: hidden;
     height: 190px;
+    position: relative;
   }
 
   @include element(name) {
@@ -28,5 +29,29 @@
     background: $white;
     padding: 20px 30px;
     flex: 2;
+  }
+
+  @include element(flag) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    width: 107px;
+    height: 26px;
+    line-height: 26px;
+    background: $light-gray;
+    color: $white;
+    font-weight: normal;
+    margin: 0;
+    text-align: center;
+    font-size: 12px;
+
+    @include modifier(is-on-sale) {
+      background: transparent linear-gradient(125deg, $on-sale-color-1 0%, $on-sale-color-2 100%) 0% 0% no-repeat padding-box;
+    }
+
+    @include modifier(is-exclusive) {
+      background: transparent linear-gradient(125deg, $exclusive-color-1 0%, $exclusive-color-2 100%) 0% 0% no-repeat padding-box;
+    }
   }
 }

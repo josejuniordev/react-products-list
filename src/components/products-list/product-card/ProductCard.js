@@ -10,10 +10,20 @@ function ProductCard(
   }
 ) {
 
+  function renderProductFlag() {
+    if (product.onSale) {
+      return <h3 className='product-card__flag product-card__flag--is-on-sale'>Promoção</h3>
+    }
+
+    if (product.exclusive) {
+      return <h3 className='product-card__flag product-card__flag--is-exclusive'>Exclusivo</h3>
+    }
+  }
+
   return (
     <article className='product-card'>
       <div className='product-card__image-container' style={{backgroundImage: `url(${product.imageUrl})`}}>
-        <h3>Promoção</h3>
+        {renderProductFlag()}
       </div>
       <div className="product-card__body">
         <div className="product-card__action-bar">

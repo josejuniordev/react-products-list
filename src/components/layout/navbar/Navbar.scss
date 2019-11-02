@@ -69,10 +69,11 @@
 
     &.navbar__logo-link {
       opacity: 1 !important;
+      padding: 40px 0;
 
-      @include element(icon) {
+      .navbar__icon {
         width: 57px;
-        margin-bottom: 40px
+        margin: 0 !important;
       }
     }
   }

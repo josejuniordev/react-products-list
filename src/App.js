@@ -10,7 +10,8 @@ import { fetchProducts } from './ducks/products';
 import LayoutContainer from './components/layout/layout-container/LayoutContainer';
 import Navbar from './components/layout/navbar/Navbar';
 
-const HomePage = React.lazy(() => import('./pages/HomePage'));
+const HomePage = React.lazy(() => import('./pages/home/HomePage'));
+const ExclusivesPage = React.lazy(() => import('./pages/exclusives/ExclusivesPage'));
 
 const engine = new Styletron();
 
@@ -70,6 +71,7 @@ export function App(
                   }
                 >
                   <Route exact path={`${process.env.PUBLIC_URL}/`} component={HomePage} />
+                  <Route exact path={`${process.env.PUBLIC_URL}/exclusive`} component={ExclusivesPage} />
                 </Suspense>
               </Switch>
           </ContentBody>

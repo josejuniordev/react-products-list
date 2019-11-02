@@ -2,7 +2,7 @@ import { render } from 'enzyme';
 import React from 'react';
 import {HomePage} from './HomePage';
 
-describe('<HomePage />', () => {
+describe('<ExclusivesPage />', () => {
   const rendered = render(<HomePage products={[]}/>);
 
   it('should render correctly', () => {

@@ -9,9 +9,11 @@ import { connect } from 'react-redux';
 import { fetchProducts } from './ducks/products';
 import LayoutContainer from './components/layout/layout-container/LayoutContainer';
 import Navbar from './components/layout/navbar/Navbar';
+import { navigationLinks } from './constants/navigation-links';
 
 const HomePage = React.lazy(() => import('./pages/home/HomePage'));
 const ExclusivesPage = React.lazy(() => import('./pages/exclusives/ExclusivesPage'));
+const OnSalePage = React.lazy(() => import('./pages/on-sale/OnSalePage'));
 
 const engine = new Styletron();
 
@@ -24,44 +26,11 @@ export function App(
     props.callFetchProducts();
   }, []);
 
-  const links = [
-    {
-      text: '',
-      image: '/images/code@2x.png',
-      isLogo: true,
-      route: '/',
-    },
-    {
-      text: 'Todos',
-      image: '/images/supplies@2x.png',
-      isLogo: false,
-      route: '/',
-    },
-    {
-      text: 'Exclusivos',
-      image: '/images/box@2x.png',
-      isLogo: false,
-      route: '/exclusive',
-    },
-    {
-      text: 'Promoção',
-      image: '/images/gift-box@2x.png',
-      isLogo: false,
-      route: '/on-sale',
-    },
-    {
-      text: 'Favoritos',
-      image: '/images/recommended@2x.png',
-      isLogo: false,
-      route: '/favorites',
-    }
-  ];
-
   return (
     <StyletronProvider value={engine}>
       <LayoutContainer>
         <Router history={history} basename=''>
-          <Navbar links={links} />
+          <Navbar links={navigationLinks} />
 
           <ContentBody>
               <Switch>
@@ -72,6 +41,7 @@ export function App(
                 >
                   <Route exact path={`${process.env.PUBLIC_URL}/`} component={HomePage} />
                   <Route exact path={`${process.env.PUBLIC_URL}/exclusive`} component={ExclusivesPage} />
+                  <Route exact path={`${process.env.PUBLIC_URL}/on-sale`} component={OnSalePage} />
                 </Suspense>
               </Switch>
           </ContentBody>

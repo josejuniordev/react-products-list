@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import ProductsList from '../../components/products-list/ProductsList';
 import SearchBar from '../../components/search-bar/SearchBar';
 
-export function ExclusivesPage(
+export function OnSalePage(
   {
     match,
     location,
@@ -14,16 +14,16 @@ export function ExclusivesPage(
   }
 ) {
   const [productsData, setProductsData] = useState([]);
-  const [exclusiveProducts, setExclusiveProducts] = useState([]);
+  const [onSaleProducts, setOnSaleProducts] = useState([]);
 
   useEffect(() => {
     const filtered = filterProducts(products.data);
-    setExclusiveProducts(filtered);
+    setOnSaleProducts(filtered);
     setProductsData(filtered);
   }, [products]);
 
   function filterProducts(products = []) {
-    return products.filter(product => product.exclusive);
+    return products.filter(product => product.onSale);
   }
 
   function onSearchHandler(data) {
@@ -34,9 +34,9 @@ export function ExclusivesPage(
     <Fragment>
       <ContentHeader
         title='Empresa XPTO'
-        titleComplement='Conheça os produtos exclusivos'
-        description='Listagem de produtos - clique no produto desejado para saber mais'
-        endEnhancer={<SearchBar data={exclusiveProducts} onSearch={onSearchHandler} />}
+        titleComplement='Conheça nossas promoções'
+        description='Listagem de produtos em promoção - clique no produto desejado para saber mais'
+        endEnhancer={<SearchBar data={onSaleProducts} onSearch={onSearchHandler} />}
       />
 
       {
@@ -48,4 +48,4 @@ export function ExclusivesPage(
   )
 }
 
-export default connect(({ products }) => ({products}))(ExclusivesPage);
+export default connect(({ products }) => ({products}))(OnSalePage);

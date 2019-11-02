@@ -1,9 +1,9 @@
 import { render } from 'enzyme';
 import React from 'react';
-import {ExclusivesPage} from './ExclusivesPage';
+import {OnSalePage} from './OnSalePage';
 
-describe('<ExclusivesPage />', () => {
-  const rendered = render(<ExclusivesPage products={[]}/>);
+describe('<OnSalePage />', () => {
+  const rendered = render(<OnSalePage products={[]}/>);
 
   it('should render correctly', () => {
     expect(rendered).toMatchSnapshot();

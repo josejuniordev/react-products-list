@@ -35,7 +35,7 @@ export function ExclusivesPage(
       <ContentHeader
         title='Empresa XPTO'
         titleComplement='Conheça os produtos exclusivos'
-        description='Listagem de produtos exclusivos - clique no produto desejado para saber mais'
+        description='Listagem de produtos - clique no produto desejado para saber mais'
         endEnhancer={<SearchBar data={exclusiveProducts} onSearch={onSearchHandler} />}
       />
 

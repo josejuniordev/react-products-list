@@ -1,0 +1,9 @@
+.content-body {
+  background: transparent;
+  padding: 75px 95px;
+  flex: 2;
+  
+  @media (max-width: 425px) {
+    padding: 75px 20px;
+  }
+}

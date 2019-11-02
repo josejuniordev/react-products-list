@@ -1,12 +1,17 @@
 import React from 'react';
 import {styled} from 'styletron-react';
+import './ContentBody.scss';
 
-const ContentBody = styled('div', {
-  backgroundColor: 'transparent',
-  width: 100,
-  height: 100,
-  padding: '75px 95px',
-  flex: '2',
-});
+function ContentBody(
+  {
+    children,
+  }
+) {
+  return (
+    <div className="content-body">
+      {children}
+    </div>
+  )
+}
 
 export default ContentBody;

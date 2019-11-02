@@ -1,9 +1,9 @@
 import { render } from 'enzyme';
 import React from 'react';
-import {ExclusivesPage} from './ExclusivesPage';
+import {FavoritesPage} from './FavoritesPage';
 
 describe('<FavoritesPage />', () => {
-  const rendered = render(<ExclusivesPage products={[]}/>);
+  const rendered = render(<FavoritesPage products={[]}/>);
 
   it('should render correctly', () => {
     expect(rendered).toMatchSnapshot();

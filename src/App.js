@@ -14,6 +14,7 @@ import { navigationLinks } from './constants/navigation-links';
 const HomePage = React.lazy(() => import('./pages/home/HomePage'));
 const ExclusivesPage = React.lazy(() => import('./pages/exclusives/ExclusivesPage'));
 const OnSalePage = React.lazy(() => import('./pages/on-sale/OnSalePage'));
+const FavoritesPage = React.lazy(() => import('./pages/favorites/FavoritesPage'));
 
 const engine = new Styletron();
 
@@ -42,6 +43,7 @@ export function App(
                   <Route exact path={`${process.env.PUBLIC_URL}/`} component={HomePage} />
                   <Route exact path={`${process.env.PUBLIC_URL}/exclusive`} component={ExclusivesPage} />
                   <Route exact path={`${process.env.PUBLIC_URL}/on-sale`} component={OnSalePage} />
+                  <Route exact path={`${process.env.PUBLIC_URL}/favorites`} component={FavoritesPage} />
                 </Suspense>
               </Switch>
           </ContentBody>

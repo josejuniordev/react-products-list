@@ -32,6 +32,8 @@
   }
 
   @include element(end-enhancer) {
+    display: flex;
+    flex-direction: row-reverse;
     flex: 2;
     text-align: right;
   }

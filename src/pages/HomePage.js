@@ -3,6 +3,7 @@ import ContentHeader from '../components/layout/content-header/ContentHeader';
 import ContentBody from '../components/layout/content-body/ContentBody';
 import { connect } from 'react-redux';
 import ProductsList from '../components/products-list/ProductsList';
+import SearchBar from '../components/search-bar/SearchBar';
 
 export function HomePage(
   {
@@ -12,17 +13,27 @@ export function HomePage(
     products,
   }
 ) {
+  const [productsData, setProductsData] = useState([]);
+
+  useEffect(() => {
+    setProductsData(products.data);
+  }, [products]);
+
+  function onSearchHandler(data) {
+    setProductsData(data);
+  }
+
   return (
     <Fragment>
       <ContentHeader
         title='Empresa XPTO'
         titleComplement='Conheça todos os nossos produtos'
         description='Listagem de produtos - clique no produto desejado para saber mais'
-        startEnhancer={() => <p>start</p>}
-        endEnhancer={() => <p>end</p>}
+        startEnhancer={<p>start</p>}
+        endEnhancer={<SearchBar data={products.data} onSearch={onSearchHandler} />}
       />
 
-      <ProductsList products={products.data} />
+      <ProductsList products={productsData} />
     </Fragment>
   )
 }

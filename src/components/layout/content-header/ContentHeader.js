@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import './ContentHeader.scss';
 
@@ -29,7 +29,7 @@ function ContentHeader(
         {
           startEnhancer && (
             <div className="content-header__start-enhancer">
-              {<StartEnhancer />}
+              {StartEnhancer}
             </div>
           )
         }
@@ -37,7 +37,7 @@ function ContentHeader(
         {
           endEnhancer && (
             <div className="content-header__end-enhancer">
-              {<EndEnhancer />}
+              {EndEnhancer}
             </div>
           )
         }
@@ -53,8 +53,8 @@ ContentHeader.propTypes = {
   title: PropTypes.string,
   titleComplement: PropTypes.string,
   description: PropTypes.string,
-  startEnhancer: PropTypes.func,
-  endEnhancer: PropTypes.func,
+  startEnhancer: PropTypes.element,
+  endEnhancer: PropTypes.element,
 };
 
 ContentHeader.defaultProps = {
@@ -65,4 +65,4 @@ ContentHeader.defaultProps = {
   endEnhancer: null,
 };
 
-export default ContentHeader;
+export default memo(ContentHeader);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import ProductCard from './product-card/ProductCard';
 import Product from '../../classes/Product';
@@ -9,6 +9,7 @@ function ProductsList(
     products,
   }
 ) {
+
   return (
     <section className='products-list'>
       {

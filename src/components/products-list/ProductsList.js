@@ -13,13 +13,17 @@ function ProductsList(
   return (
     <section className='products-list'>
       {
-        products.map(product => {
-          return (
-            <div className="products-list__item">
-              <ProductCard key={product.id} product={product} />
-            </div>
-          );
-        })
+        products.length
+          ? (
+              products.map(product => {
+                return (
+                  <div className="products-list__item">
+                    <ProductCard key={product.id} product={product} />
+                  </div>
+                );
+              })
+            )
+          : <p>Não existem produtos para exibir.</p>
       }
     </section>
   )

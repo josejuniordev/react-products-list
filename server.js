@@ -12,6 +12,6 @@ app.get('/ping', function (req, res) {
     return res.send('pong');
 });
 app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'ContentBody.js.html'));
+    res.sendFile(path.join(__dirname, 'build', 'LayoutContaineriner.js.html'));
 });
 app.listen(port);

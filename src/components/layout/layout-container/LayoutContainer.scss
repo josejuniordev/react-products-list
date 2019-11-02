@@ -1,0 +1,10 @@
+.layout-container {
+  min-height: 100%;
+  background: transparent;
+  display: flex;
+  align-items: stretch;
+  
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
+}

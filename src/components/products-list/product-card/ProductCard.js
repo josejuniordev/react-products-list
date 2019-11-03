@@ -29,7 +29,8 @@ function ProductCard(
         <div className="product-card__action-bar">
           <AmountAndFavoriteInfoBar
             amount={product.amount}
-            isFavorite={true}
+            isFavorite={product.favorite}
+            productId={product.id}
           />
         </div>
         <h2 className='product-card__name'>{product.name}</h2>

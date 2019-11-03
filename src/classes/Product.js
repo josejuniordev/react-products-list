@@ -11,6 +11,7 @@ export default class Product {
     this.name = data.nome;
     this.onSale = data.promocao;
     this.amount = data.valor;
+    this.favorite = data.favorite || false;
   }
 
 }

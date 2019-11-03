@@ -1,23 +1,73 @@
-import React from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ProductCard from './product-card/ProductCard';
 import Product from '../../classes/Product';
 import './ProductsList.scss';
 import { withRouter } from 'react-router-dom';
 
+const amount = 3;
+
 export function ProductsList(
   {
     products,
-    history,
   }
 ) {
 
+  const [loadedProducts, setLoadedProducts] = useState([]);
+  const [loadMore, setLoadMore] = useState(false);
+  const [limit, setLimit] = useState(amount);
+  const [offset, setOffset] = useState(0);
+
+  function loadProducts() {
+    setLoadMore(false);
+
+    if (loadedProducts.length >= products.length) {
+      return;
+    }
+
+    const sliced = products.slice(offset, limit);
+    const previousLoaded = [...loadedProducts, ...sliced];
+
+    setLoadedProducts(previousLoaded);
+    setOffset(offset + amount);
+    setLimit(limit + amount);
+  }
+
+  useEffect(() => {
+    if (loadMore) {
+      loadProducts();
+    }
+  }, [loadMore]);
+
+  useEffect(() => {
+    if (products && products.length) {
+      setLoadMore(true);
+    }
+  }, [products]);
+
+  useEffect(() => {
+    const wrapper = document.querySelector('.layout-container');
+
+    const timer = setInterval(() => {
+      const scrollLimit = wrapper.offsetHeight - window.innerHeight;
+
+      if (window.scrollY >= scrollLimit) {
+        setLoadMore(true);
+      }
+    }, 500);
+
+    return () => {
+      window.clearInterval(timer)
+    }
+  }, []);
+
   return (
-    <section className='products-list'>
-      {
-        products.length
-          ? (
-              products.map(product => {
+    <Fragment>
+      <section className='products-list'>
+        {
+          loadedProducts && loadedProducts.length
+            ? (
+              loadedProducts.map(product => {
                 return (
                   <div key={product.id} className="products-list__item">
                     <ProductCard key={product.id} product={product} />
@@ -25,9 +75,13 @@ export function ProductsList(
                 );
               })
             )
-          : <p>Não existem produtos para exibir.</p>
+            : <p>Não existem produtos para exibir.</p>
+        }
+      </section>
+      {
+        loadMore && <p>carregando ...</p>
       }
-    </section>
+    </Fragment>
   )
 }
 

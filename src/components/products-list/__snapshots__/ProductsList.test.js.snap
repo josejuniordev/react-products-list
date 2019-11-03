@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ProductsList /> should render correctly 1`] = `ShallowWrapper {}`;
+exports[`<ProductsList /> with products should render correctly 1`] = `ReactWrapper {}`;
+
+exports[`<ProductsList /> without products should render correctly 1`] = `ReactWrapper {}`;

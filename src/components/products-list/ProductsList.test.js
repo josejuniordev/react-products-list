@@ -1,19 +1,54 @@
-import { shallow, render } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 import {ProductsList} from './ProductsList';
 import { productsMock } from '../../mock/products-mock';
 import ProductCard from './product-card/ProductCard';
 import Product from '../../classes/Product';
+import store from '../../store';
+import { Provider } from 'react-redux';
+import { Router } from 'react-router-dom';
+import history from '../../history';
 
 describe('<ProductsList />', () => {
-  const products = productsMock.map(product => new Product(product));
-  const renderedWrapper = shallow(<ProductsList products={products} />);
+  describe('with products', () => {
+    const products = productsMock.map(product => new Product(product));
+    let testableMethods;
 
-  it('should render correctly', () => {
-    expect(renderedWrapper).toMatchSnapshot();
+    const renderedWrapper = mount(
+      <Provider store={store}>
+        <Router history={history}>
+          <ProductsList giveTestAccess={(values) => testableMethods = values} products={products} />
+        </Router>
+      </Provider>
+    );
+
+    it('should render correctly', () => {
+      expect(renderedWrapper).toMatchSnapshot();
+    });
+
+    it('should render the correctly number of cards to number of products', () => {
+      const infiniteLoaderInitialNumber = 3;
+
+      expect(renderedWrapper.find(ProductCard).length).toBe(infiniteLoaderInitialNumber);
+    });
+
   });
 
-  it('should render the correctly number of cards to number of products', () => {
-    expect(renderedWrapper.find(ProductCard).length).toBe(0);
+  describe('without products', () => {
+    const renderedWrapper = mount(
+      <Provider store={store}>
+        <Router history={history}>
+          <ProductsList products={[]} />
+        </Router>
+      </Provider>
+    );
+
+    it('should render correctly', () => {
+      expect(renderedWrapper).toMatchSnapshot();
+    });
+
+    it('should render no products', () => {
+      expect(renderedWrapper.find(ProductCard).length).toBe(0);
+    })
   })
 });

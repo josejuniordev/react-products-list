@@ -10,6 +10,7 @@
 /coverage
 
 # production
+build/
 build/static/css/*.map
 build/static/js/*.map
 

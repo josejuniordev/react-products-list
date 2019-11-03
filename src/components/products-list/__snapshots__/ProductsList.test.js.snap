@@ -6,7 +6,28 @@ initialize {
     "attribs": Object {
       "class": "products-list",
     },
-    "children": Array [],
+    "children": Array [
+      Object {
+        "attribs": Object {},
+        "children": Array [
+          Object {
+            "data": "Não existem produtos para exibir.",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "p",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
+    ],
     "name": "section",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,

@@ -1,23 +1,26 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import ContentHeader from '../../components/layout/content-header/ContentHeader';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, withRouter } from 'react-router-dom';
 import AmountAndFavoriteInfoBar from '../../components/amount-and-favorite-info-bar/AmountAndFavoriteInfoBar';
 import ProductInformation from '../../components/product-informations/ProductInformation';
 import BackButton from '../../components/buttons/back-button/BackButton';
-
+import history from '../../history';
 export function ProductPage(
   {
     products,
+    match,
   }
 ) {
   const [productData, setProductData] = useState(false);
-  const {id} = useParams();
+
+  console.log('history', history)
 
   useEffect(() => {
+    const id = match.params.id;
     const currentProduct = findProduct(products.data, +id);
     setProductData(currentProduct);
-  }, [id, products]);
+  }, [match, products]);
 
   function findProduct(productsData, productId) {
     return productsData.find(product => product.id === productId);
@@ -48,4 +51,4 @@ export function ProductPage(
   )
 }
 
-export default connect(({ products }) => ({products}))(ProductPage);
+export default connect(({ products }) => ({products}))(withRouter(ProductPage));

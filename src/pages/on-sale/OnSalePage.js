@@ -36,7 +36,7 @@ export function OnSalePage(
       />
 
       {
-        products.loading.fetch
+        products && products.loading.fetch
           ? <p>Buscando produtos...</p>
           : <ProductsList products={productsData} />
       }

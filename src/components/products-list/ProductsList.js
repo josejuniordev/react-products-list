@@ -5,7 +5,7 @@ import Product from '../../classes/Product';
 import './ProductsList.scss';
 import { withRouter } from 'react-router-dom';
 
-function ProductsList(
+export function ProductsList(
   {
     products,
     history,

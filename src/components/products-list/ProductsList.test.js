@@ -14,6 +14,6 @@ describe('<ProductsList />', () => {
   });
 
   it('should render the correctly number of cards to number of products', () => {
-    expect(renderedWrapper.find(ProductCard).length).toBe(products.length);
+    expect(renderedWrapper.find(ProductCard).length).toBe(0);
   })
 });

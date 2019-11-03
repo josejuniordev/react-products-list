@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import Product from '../../classes/Product';
 import './SearchBar.scss';
+import loupeIcon from '../../assets/images/loupe@2x.png';
 
 function SearchBar(
   {
@@ -28,7 +29,7 @@ function SearchBar(
   return (
     <div className='search-bar'>
       <button className='search-bar__button'>
-        <img className='search-bar__icon' alt='Ícone de busca' src={process.env.PUBLIC_URL + '/images/loupe@2x.png'} />
+        <img className='search-bar__icon' alt='Ícone de busca' src={loupeIcon} />
       </button>
       <input
         placeholder='Buscar'

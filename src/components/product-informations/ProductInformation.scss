@@ -1,0 +1,36 @@
+@import "../../styles/colors";
+@import "../../styles/bem";
+
+.product-information {
+
+  @include element(image-and-details) {
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  @include element(image) {
+    width: 360px;
+    height: 360px;
+    margin-right: 50px;
+    flex-shrink: 0;
+  }
+
+  @include element(title) {
+    font-size: 20px;
+    line-height: 33px;
+    margin: 0 0 25px 0;
+    color: $text-color;
+  }
+
+  @include element(details) {
+    color: $secondary-text-color;
+  }
+
+  @include element(datasheet-list) {
+    color: $secondary-text-color;
+    -webkit-columns: 300px 3;
+    -moz-columns: 300px 3;
+    columns: 300px 3;
+    column-gap: 3em;
+  }
+}

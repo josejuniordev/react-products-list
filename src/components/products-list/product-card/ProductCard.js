@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Product from '../../../classes/Product';
 import './ProductCard.scss';
 import AmountAndFavoriteInfoBar from '../../amount-and-favorite-info-bar/AmountAndFavoriteInfoBar';
+import ImageDisplay from '../../product-parts/image-display/ImageDisplay';
 
 function ProductCard(
   {
@@ -11,16 +12,6 @@ function ProductCard(
   }
 ) {
 
-  function renderProductFlag() {
-    if (product.onSale) {
-      return <h3 className='product-card__flag product-card__flag--is-on-sale'>Promoção</h3>
-    }
-
-    if (product.exclusive) {
-      return <h3 className='product-card__flag product-card__flag--is-exclusive'>Exclusivo</h3>
-    }
-  }
-
   function onClickHandler(ev) {
     ev.preventDefault();
     onClick();
@@ -28,9 +19,7 @@ function ProductCard(
 
   return (
     <article className='product-card'>
-      <div className='product-card__image-container' style={{backgroundImage: `url(${product.imageUrl})`}}>
-        {renderProductFlag()}
-      </div>
+      <ImageDisplay product={product} />
       <div className="product-card__body">
         <div className="product-card__action-bar">
           <AmountAndFavoriteInfoBar

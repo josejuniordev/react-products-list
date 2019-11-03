@@ -1,6 +1,8 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import './ContentHeader.scss';
+import classnames from 'classnames';
+import { componentsSizes } from '../../../constants/components-sizes';
 
 function ContentHeader(
   {
@@ -9,13 +11,19 @@ function ContentHeader(
     description,
     startEnhancer,
     endEnhancer,
+    size,
   }
 ) {
 
   const StartEnhancer = startEnhancer;
   const EndEnhancer = endEnhancer;
+
+  const classname = classnames({
+    'content-header': true,
+    'content-header--is-small': size === componentsSizes.SMALL,
+  });
   return (
-    <header className='content-header'>
+    <header className={classname}>
       <div className='content-header__container'>
         <h1 className='content-header__title'>
           {title}
@@ -44,7 +52,7 @@ function ContentHeader(
 
       </div>
 
-      <p className='content-header__description'>{description}</p>
+      { description && <p className='content-header__description'>{description}</p> }
     </header>
   )
 }
@@ -55,6 +63,7 @@ ContentHeader.propTypes = {
   description: PropTypes.string,
   startEnhancer: PropTypes.element,
   endEnhancer: PropTypes.element,
+  size: PropTypes.oneOf(['small', 'normal', 'big']),
 };
 
 ContentHeader.defaultProps = {
@@ -63,6 +72,7 @@ ContentHeader.defaultProps = {
   description: '',
   startEnhancer: null,
   endEnhancer: null,
+  size: 'normal',
 };
 
 export default memo(ContentHeader);

@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import ProductsList from '../../components/products-list/ProductsList';
 import SearchBar from '../../components/search-bar/SearchBar';
 import { useParams } from 'react-router-dom';
+import AmountAndFavoriteInfoBar from '../../components/amount-and-favorite-info-bar/AmountAndFavoriteInfoBar';
+import ProductInformation from '../../components/product-informations/ProductInformation';
 
 export function ProductPage(
   {
@@ -14,33 +16,40 @@ export function ProductPage(
   const {id} = useParams();
 
   useEffect(() => {
-    if (id) {
-      console.log('produto Id', id)
-    }
-  }, [id]);
+    const currentProduct = findProduct(products.data, +id);
+    setProductData(currentProduct);
 
-  function filterProducts(products = []) {
-    return products.filter(product => product.favorite);
+  }, [id, products]);
+
+  function findProduct(productsData, productId) {
+    return productsData.find(product => product.id === productId);
   }
 
   function onSearchHandler(data) {
-    setProductsData(data);
+    // setProductsData(data);
   }
+
+  if (!productData) {
+    return <p>Carregando produto...</p>;
+  }
+
 
   return (
     <Fragment>
       <ContentHeader
-        title='Empresa XPTO'
-        titleComplement='Meus favoritos'
-        description='Listagem de produtos marcados como favoritos - clique no produto desejado para saber mais'
-        endEnhancer={<SearchBar data={FavoritesProducts} onSearch={onSearchHandler} />}
+        title={productData.name}
+        description={productData.shortDescription}
+        startEnhancer={
+          <AmountAndFavoriteInfoBar
+            productId={productData.id}
+            amount={productData.amount}
+            isFavorite={productData.favorite}
+          />
+        }
+        endEnhancer={<p>botão de voltar</p>}
       />
 
-      {
-        products.loading.fetch
-          ? <p>Buscando produtos...</p>
-          : <ProductsList products={productData} />
-      }
+      <ProductInformation product={productData} />
     </Fragment>
   )
 }

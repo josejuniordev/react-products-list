@@ -1,0 +1,9 @@
+@import "../../../styles/bem";
+
+.back-button {
+
+  @include element(image) {
+    width: 35px;
+    display: inline-block;
+  }
+}

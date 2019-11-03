@@ -10,12 +10,8 @@
     text-decoration: none;
   }
 
-  @include element(image-container) {
-    background: center no-repeat;
-    background-size: cover;
-    overflow: hidden;
+  @include element(image) {
     height: 190px;
-    position: relative;
   }
 
   @include element(name) {

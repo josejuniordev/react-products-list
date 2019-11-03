@@ -6,6 +6,7 @@ import SearchBar from '../../components/search-bar/SearchBar';
 import { useParams } from 'react-router-dom';
 import AmountAndFavoriteInfoBar from '../../components/amount-and-favorite-info-bar/AmountAndFavoriteInfoBar';
 import ProductInformation from '../../components/product-informations/ProductInformation';
+import BackButton from '../../components/buttons/back-button/BackButton';
 
 export function ProductPage(
   {
@@ -46,7 +47,7 @@ export function ProductPage(
             isFavorite={productData.favorite}
           />
         }
-        endEnhancer={<p>botão de voltar</p>}
+        endEnhancer={<BackButton/>}
       />
 
       <ProductInformation product={productData} />

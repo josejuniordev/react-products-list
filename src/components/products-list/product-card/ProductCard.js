@@ -19,7 +19,9 @@ function ProductCard(
 
   return (
     <article className='product-card'>
-      <ImageDisplay product={product} />
+      <div className="product-card__image">
+        <ImageDisplay product={product} />
+      </div>
       <div className="product-card__body">
         <div className="product-card__action-bar">
           <AmountAndFavoriteInfoBar

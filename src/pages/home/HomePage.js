@@ -29,7 +29,6 @@ export function HomePage(
         title='Empresa XPTO'
         titleComplement='Conheça todos os nossos produtos'
         description='Listagem de produtos - clique no produto desejado para saber mais'
-        startEnhancer={<p>start</p>}
         endEnhancer={<SearchBar data={products.data} onSearch={onSearchHandler} />}
       />
 

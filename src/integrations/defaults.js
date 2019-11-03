@@ -1,5 +1,5 @@
-const developmentApiUrl = 'http://www.mocky.io/v2';
-const productionApiUrl = 'http://www.mocky.io/v2';
+const developmentApiUrl = 'https://www.mocky.io/v2';
+const productionApiUrl = 'https://www.mocky.io/v2';
 
 export const apiUrls = {
   production: {

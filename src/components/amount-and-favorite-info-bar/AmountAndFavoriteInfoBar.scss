@@ -4,6 +4,7 @@
 .amount-favorite-info {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   @include element(amount) {
     color: $purple;

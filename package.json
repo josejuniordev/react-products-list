@@ -59,6 +59,7 @@
     "dotenv-expand": "^5.1.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
+    "eslint-config-airbnb": "^18.0.1",
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
     "node-sass": "^4.12.0"

@@ -1,5 +1,4 @@
 import React from 'react';
-import {styled} from 'styletron-react';
 import './ContentBody.scss';
 
 function ContentBody(

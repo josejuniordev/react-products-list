@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import ContentHeader from '../../components/layout/content-header/ContentHeader';
-import ContentBody from '../../components/layout/content-body/ContentBody';
 import { connect } from 'react-redux';
 import ProductsList from '../../components/products-list/ProductsList';
 import SearchBar from '../../components/search-bar/SearchBar';

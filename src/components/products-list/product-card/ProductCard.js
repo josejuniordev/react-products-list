@@ -4,18 +4,13 @@ import Product from '../../../classes/Product';
 import './ProductCard.scss';
 import AmountAndFavoriteInfoBar from '../../amount-and-favorite-info-bar/AmountAndFavoriteInfoBar';
 import ImageDisplay from '../../product-parts/image-display/ImageDisplay';
+import { Link } from 'react-router-dom';
 
 function ProductCard(
   {
     product,
-    onClick = () => {},
   }
 ) {
-
-  function onClickHandler(ev) {
-    ev.preventDefault();
-    onClick();
-  }
 
   return (
     <article className='product-card'>
@@ -30,7 +25,7 @@ function ProductCard(
             productId={product.id}
           />
         </div>
-        <h2 className='product-card__name'><a href="#" onClick={onClickHandler}>{product.name}</a></h2>
+        <h2 className='product-card__name'><Link to={`/product/${product.id}`}>{product.name}</Link></h2>
         <p className='product-card__description'>{product.shortDescription}</p>
       </div>
     </article>

@@ -1,6 +1,10 @@
 @import "../../../styles/bem";
 
 .back-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 
   @include element(image) {
     width: 35px;

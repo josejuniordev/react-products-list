@@ -26,8 +26,8 @@ function ProductInformation(
         <ul className="product-information__datasheet-list">
           {
             product.datasheet && product.datasheet.length
-              && product.datasheet.map(item => {
-                return <li><span>{item.titulo}:</span> {item.descricao}</li>
+              && product.datasheet.map((item, index) => {
+                return <li key={index}><span>{item.titulo}:</span> {item.descricao}</li>
             })
           }
         </ul>

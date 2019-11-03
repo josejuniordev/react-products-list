@@ -1,5 +1,5 @@
-import React, { Suspense, useEffect, Fragment } from 'react';
-import { Router, Switch, Route, NavLink, useLocation } from 'react-router-dom';
+import React, { Suspense, useEffect } from 'react';
+import { Router, Switch, Route } from 'react-router-dom';
 import './App.scss';
 import {Client as Styletron} from 'styletron-engine-atomic';
 import history from './history';
@@ -20,13 +20,14 @@ const ProductPage = React.lazy(() => import('./pages/product/ProductPage'));
 const engine = new Styletron();
 
 export function App(
-  props
+  {
+    callFetchProducts
+  }
 ) {
-  const {location} = history;
 
   useEffect(() => {
-    props.callFetchProducts();
-  }, []);
+    callFetchProducts();
+  }, [callFetchProducts]);
 
   return (
     <StyletronProvider value={engine}>

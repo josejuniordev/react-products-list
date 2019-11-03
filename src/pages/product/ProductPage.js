@@ -1,8 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import ContentHeader from '../../components/layout/content-header/ContentHeader';
 import { connect } from 'react-redux';
-import ProductsList from '../../components/products-list/ProductsList';
-import SearchBar from '../../components/search-bar/SearchBar';
 import { useParams } from 'react-router-dom';
 import AmountAndFavoriteInfoBar from '../../components/amount-and-favorite-info-bar/AmountAndFavoriteInfoBar';
 import ProductInformation from '../../components/product-informations/ProductInformation';
@@ -19,15 +17,10 @@ export function ProductPage(
   useEffect(() => {
     const currentProduct = findProduct(products.data, +id);
     setProductData(currentProduct);
-
   }, [id, products]);
 
   function findProduct(productsData, productId) {
     return productsData.find(product => product.id === productId);
-  }
-
-  function onSearchHandler(data) {
-    // setProductsData(data);
   }
 
   if (!productData) {

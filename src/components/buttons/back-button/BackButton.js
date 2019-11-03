@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './BackButton.scss';
 
 function BackButton(
@@ -14,9 +14,9 @@ function BackButton(
   }
 
   return (
-    <a href="#" className='back-button' onClick={(ev) => onClickHandler(ev)}>
-      <img className='back-button__image'  src={process.env.PUBLIC_URL + '/images/return@2x.png'} />
-    </a>
+    <button  className='back-button' onClick={(ev) => onClickHandler(ev)}>
+      <img className='back-button__image' alt='Voltar' src={process.env.PUBLIC_URL + '/images/return@2x.png'} />
+    </button>
   )
 }
 

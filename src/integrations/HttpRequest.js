@@ -1,5 +1,3 @@
-import history from '../history';
-
 const defaulHeaders = {
   'Content-Type': 'application/json',
 };
@@ -15,7 +13,6 @@ export class HttpRequest {
       return await fetch(params.url, params)
         .then(response => {
           if (response.status === httpStatusCode.UNAUTHORIZED) {
-            // history.push('/login', {previousPage: history.location.pathName});
             alert('usuário não autorizado');
           }
 

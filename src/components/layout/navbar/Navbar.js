@@ -12,18 +12,19 @@ function Navbar(
     <div className="navbar">
       <div className="navbar__wrapper">
         {
-          links.map(link => {
+          links.map((link, index) => {
             const classname = classnames({
               'navbar__logo-link': link.isLogo,
             });
 
             return (
               <NavLink
+                key={index}
                 className={classname}
                 exact
                 to={link.route}
               >
-                <img className='navbar__icon'  src={process.env.PUBLIC_URL + link.image} />
+                <img className='navbar__icon' alt={link.text} src={process.env.PUBLIC_URL + link.image} />
                 {link.text}
               </NavLink>
             )

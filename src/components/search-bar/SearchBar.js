@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import Product from '../../classes/Product';
 import './SearchBar.scss';
@@ -28,7 +28,7 @@ function SearchBar(
   return (
     <div className='search-bar'>
       <button className='search-bar__button'>
-        <img className='search-bar__icon'  src={process.env.PUBLIC_URL + '/images/loupe@2x.png'} />
+        <img className='search-bar__icon' alt='Ícone de busca' src={process.env.PUBLIC_URL + '/images/loupe@2x.png'} />
       </button>
       <input
         placeholder='Buscar'

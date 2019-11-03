@@ -1,6 +1,6 @@
 ## Available Scripts
 
-[https://react-products-list.herokuapp.com/](DEMO)
+[DEMO](https://react-products-list.herokuapp.com/)
 
 First off all you need run `npm install`.
 

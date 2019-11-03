@@ -14,9 +14,14 @@ export function FavoritesPage(
   const [FavoritesProducts, setFavoritesProducts] = useState([]);
 
   useEffect(() => {
-    setFavoritesProducts(products.favorites);
-    setProductsData(products.favorites);
+    const filtered = filterProducts(products.data);
+    setFavoritesProducts(filtered);
+    setProductsData(filtered);
   }, [products]);
+
+  function filterProducts(products = []) {
+    return products.filter(product => product.favorite);
+  }
 
   function onSearchHandler(data) {
     setProductsData(data);

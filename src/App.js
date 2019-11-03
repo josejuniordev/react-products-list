@@ -44,6 +44,7 @@ export function App(
                   <Route exact path={`${process.env.PUBLIC_URL}/exclusive`} component={ExclusivesPage} />
                   <Route exact path={`${process.env.PUBLIC_URL}/on-sale`} component={OnSalePage} />
                   <Route exact path={`${process.env.PUBLIC_URL}/favorites`} component={FavoritesPage} />
+                  <Route exact path={`${process.env.PUBLIC_URL}/product/:id`} component={FavoritesPage} />
                 </Suspense>
               </Switch>
           </ContentBody>

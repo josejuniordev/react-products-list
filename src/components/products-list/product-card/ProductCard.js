@@ -7,6 +7,7 @@ import AmountAndFavoriteInfoBar from '../../amount-and-favorite-info-bar/AmountA
 function ProductCard(
   {
     product,
+    onClick = () => {},
   }
 ) {
 
@@ -18,6 +19,11 @@ function ProductCard(
     if (product.exclusive) {
       return <h3 className='product-card__flag product-card__flag--is-exclusive'>Exclusivo</h3>
     }
+  }
+
+  function onClickHandler(ev) {
+    ev.preventDefault();
+    onClick();
   }
 
   return (
@@ -33,7 +39,7 @@ function ProductCard(
             productId={product.id}
           />
         </div>
-        <h2 className='product-card__name'>{product.name}</h2>
+        <h2 className='product-card__name'><a href="#" onClick={onClickHandler}>{product.name}</a></h2>
         <p className='product-card__description'>{product.shortDescription}</p>
       </div>
     </article>
@@ -42,6 +48,7 @@ function ProductCard(
 
 ProductCard.propTypes = {
   product: PropTypes.instanceOf(Product),
+  onClick: PropTypes.func,
 };
 
 export default ProductCard;

@@ -3,12 +3,22 @@ import PropTypes from 'prop-types';
 import ProductCard from './product-card/ProductCard';
 import Product from '../../classes/Product';
 import './ProductsList.scss';
+import { withRouter } from 'react-router-dom';
 
 function ProductsList(
   {
     products,
+    history,
   }
 ) {
+
+  function onClickHandler(id) {
+    if (!id) {
+      return;
+    }
+
+    history.push(`/product/${id}`);
+  }
 
   return (
     <section className='products-list'>
@@ -18,7 +28,7 @@ function ProductsList(
               products.map(product => {
                 return (
                   <div className="products-list__item">
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard onClick={() => onClickHandler(product.id)} key={product.id} product={product} />
                   </div>
                 );
               })
@@ -39,4 +49,4 @@ ProductsList.defaultProps = {
   products: [],
 };
 
-export default ProductsList;
+export default withRouter(ProductsList);

@@ -6,6 +6,10 @@
   flex-direction: column;
   max-width: 100%;
 
+  a {
+    text-decoration: none;
+  }
+
   @include element(image-container) {
     background: center no-repeat;
     background-size: cover;

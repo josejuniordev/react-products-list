@@ -19,7 +19,7 @@ export function ProductsList(
           ? (
               products.map(product => {
                 return (
-                  <div className="products-list__item">
+                  <div key={product.id} className="products-list__item">
                     <ProductCard key={product.id} product={product} />
                   </div>
                 );

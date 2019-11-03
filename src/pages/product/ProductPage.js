@@ -1,11 +1,10 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import ContentHeader from '../../components/layout/content-header/ContentHeader';
 import { connect } from 'react-redux';
-import { useParams, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import AmountAndFavoriteInfoBar from '../../components/amount-and-favorite-info-bar/AmountAndFavoriteInfoBar';
 import ProductInformation from '../../components/product-informations/ProductInformation';
 import BackButton from '../../components/buttons/back-button/BackButton';
-import history from '../../history';
 export function ProductPage(
   {
     products,
@@ -13,8 +12,6 @@ export function ProductPage(
   }
 ) {
   const [productData, setProductData] = useState(false);
-
-  console.log('history', history)
 
   useEffect(() => {
     const id = match.params.id;

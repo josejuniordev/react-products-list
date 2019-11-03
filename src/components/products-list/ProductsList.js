@@ -18,26 +18,26 @@ export function ProductsList(
   const [limit, setLimit] = useState(amount);
   const [offset, setOffset] = useState(0);
 
-  function loadProducts() {
-    setLoadMore(false);
-
-    if (loadedProducts.length >= products.length) {
-      return;
-    }
-
-    const sliced = products.slice(offset, limit);
-    const previousLoaded = [...loadedProducts, ...sliced];
-
-    setLoadedProducts(previousLoaded);
-    setOffset(offset + amount);
-    setLimit(limit + amount);
-  }
-
   useEffect(() => {
     if (loadMore) {
       loadProducts();
     }
-  }, [loadMore]);
+
+    function loadProducts() {
+      setLoadMore(false);
+
+      if (loadedProducts.length >= products.length) {
+        return;
+      }
+
+      const sliced = products.slice(offset, limit);
+      const previousLoaded = [...loadedProducts, ...sliced];
+
+      setLoadedProducts(previousLoaded);
+      setOffset(offset + amount);
+      setLimit(limit + amount);
+    }
+  }, [loadMore, limit, loadedProducts, offset, products]);
 
   useEffect(() => {
     if (products && products.length) {

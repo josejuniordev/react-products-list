@@ -7,13 +7,20 @@ export const httpStatusCode = {
 };
 
 export class HttpRequest {
-  // eslint-disable-next-line no-underscore-dangle
-  async __request(params = {
-    url: undefined, method: undefined, headers: undefined, body: undefined,
-  }) {
+  constructor() {
+    this.request = this.request.bind(this);
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  request(
+    params = {
+      url: undefined, method: undefined, headers: undefined, body: undefined,
+    },
+  ) {
     return fetch(params.url, params)
       .then((response) => {
         if (response.status === httpStatusCode.UNAUTHORIZED) {
+          // eslint-disable-next-line no-alert
           alert('usuário não autorizado');
         }
 
@@ -29,7 +36,7 @@ export class HttpRequest {
     };
 
     // eslint-disable-next-line no-underscore-dangle
-    return this.__request(params);
+    return this.request(params);
   }
 
   async post(url, body = {}, headers = {}) {
@@ -44,7 +51,7 @@ export class HttpRequest {
     }
 
     // eslint-disable-next-line no-underscore-dangle
-    return this.__request(params);
+    return this.request(params);
   }
 
   async put(url, body = {}, headers = {}) {
@@ -55,7 +62,7 @@ export class HttpRequest {
       body: JSON.stringify(body),
     };
     // eslint-disable-next-line no-underscore-dangle
-    return this.__request(params);
+    return this.request(params);
   }
 }
 

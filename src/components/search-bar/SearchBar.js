@@ -26,7 +26,7 @@ function SearchBar(
 
   return (
     <div className="search-bar">
-      <button className="search-bar__button">
+      <button type="button" className="search-bar__button">
         <img className="search-bar__icon" alt="Ícone de busca" src={loupeIcon} />
       </button>
       <input

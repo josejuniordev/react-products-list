@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import ContentHeader from '../../components/layout/content-header/ContentHeader';
 import ProductsList from '../../components/products-list/ProductsList';
 import SearchBar from '../../components/search-bar/SearchBar';
+import productsStateShape from '../../constants/products-state-shape';
 
 export function ExclusivesPage(
   {
@@ -43,5 +45,13 @@ export function ExclusivesPage(
     </>
   );
 }
+
+ExclusivesPage.propTypes = {
+  products: PropTypes.shape(productsStateShape),
+};
+
+ExclusivesPage.defaultProps = {
+  products: null,
+};
 
 export default connect(({ products }) => ({ products }))(ExclusivesPage);

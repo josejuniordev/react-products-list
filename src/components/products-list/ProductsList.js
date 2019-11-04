@@ -7,7 +7,7 @@ import './ProductsList.scss';
 
 const amount = 3;
 
-export function ProductsList(
+function ProductsList(
   {
     products,
   },
@@ -113,5 +113,7 @@ ProductsList.propTypes = {
 ProductsList.defaultProps = {
   products: [],
 };
+
+export const TestableProductsList = ProductsList;
 
 export default withRouter(ProductsList);

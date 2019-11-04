@@ -1,14 +1,14 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import { act } from 'react-dom/test-utils';
-import { AmountAndFavoriteInfoBar } from './AmountAndFavoriteInfoBar';
+import { TestableAmountAndFavoriteInfoBar } from './AmountAndFavoriteInfoBar';
 
 describe('<AmountAndFavoriteInfoBar />', () => {
   const amountValue = 10;
   let rendered;
 
   act(() => {
-    rendered = shallow(<AmountAndFavoriteInfoBar amount={amountValue} />);
+    rendered = shallow(<TestableAmountAndFavoriteInfoBar amount={amountValue} />);
   });
 
   it('should render correctly', () => {

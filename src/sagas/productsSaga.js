@@ -29,6 +29,7 @@ function* fetchProductsSaga() {
     }
   } catch (errors) {
     yield put(fetchProductsFailed(errors));
+    // eslint-disable-next-line no-console
     console.error(errors);
   }
 }
@@ -40,6 +41,7 @@ function* addProductToFavoritesSaga({ productId }) {
 
     yield put(updateProducts(updatedProducts));
   } catch (errors) {
+    // eslint-disable-next-line no-console
     console.error(errors);
   }
 }
@@ -51,6 +53,7 @@ function* removeFavoriteProductSaga({ productId }) {
 
     yield put(updateProducts(updatedProducts));
   } catch (errors) {
+    // eslint-disable-next-line no-console
     console.error(errors);
   }
 }

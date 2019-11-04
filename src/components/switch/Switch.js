@@ -23,9 +23,25 @@ function Switch(
 
   return (
     <div className="switch-checkbox">
-      <input checked={checkedState} onChange={(event) => onChangeHandler(event.target.checked)} id={id} className="switch-checkbox__input" type="checkbox" />
+      <input
+        checked={checkedState}
+        onChange={(event) => onChangeHandler(event.target.checked)}
+        id={id}
+        className="switch-checkbox__input"
+        type="checkbox"
+      />
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label htmlFor={id} className="switch-checkbox__switch" />
-      <span onClick={onClickHandler} className="switch-checkbox__label">{label}</span>
+      <span
+        role="checkbox"
+        aria-checked={false}
+        tabIndex="0"
+        onKeyDown={onClickHandler}
+        onClick={onClickHandler}
+        className="switch-checkbox__label"
+      >
+        {label}
+      </span>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
-import { ProductsList } from './ProductsList';
+import { TestableProductsList } from './ProductsList';
 import { productsMock } from '../../mock/products-mock';
 import ProductCard from './product-card/ProductCard';
 import Product from '../../classes/Product';
@@ -16,7 +16,7 @@ describe('<ProductsList />', () => {
     const renderedWrapper = mount(
       <Provider store={store}>
         <Router history={history}>
-          <ProductsList products={products} />
+          <TestableProductsList products={products} />
         </Router>
       </Provider>,
     );
@@ -36,7 +36,7 @@ describe('<ProductsList />', () => {
     const renderedWrapper = mount(
       <Provider store={store}>
         <Router history={history}>
-          <ProductsList products={[]} />
+          <TestableProductsList products={[]} />
         </Router>
       </Provider>,
     );

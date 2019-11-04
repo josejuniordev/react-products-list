@@ -20,7 +20,7 @@ const ProductPage = React.lazy(() => import('./pages/product/ProductPage'));
 
 const engine = new Styletron();
 
-export function App(
+function App(
   {
     callFetchProducts,
   },
@@ -64,6 +64,7 @@ App.defaultProps = {
   callFetchProducts: () => {},
 };
 
+export const TestableApp = App;
 
 export const mapDispatchToProps = (dispatch) => ({
   callFetchProducts() {

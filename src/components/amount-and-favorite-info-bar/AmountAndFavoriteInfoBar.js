@@ -6,7 +6,7 @@ import './AmountAndFavoriteInfoBar.scss';
 import { currencyFormat } from '../../helpers/utils';
 import { addProductToFavorites, removeFavoriteProduct } from '../../ducks/products';
 
-export function AmountAndFavoriteInfoBar(
+function AmountAndFavoriteInfoBar(
   {
     amount,
     isFavorite,
@@ -50,6 +50,8 @@ AmountAndFavoriteInfoBar.defaultProps = {
   sendToFavorites: () => {},
   removeFromFavorites: () => {},
 };
+
+export const TestableAmountAndFavoriteInfoBar = AmountAndFavoriteInfoBar;
 
 export default connect(
   false,

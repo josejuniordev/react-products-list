@@ -13,6 +13,8 @@ export function ProductsList(
   },
 ) {
   const [loadedProducts, setLoadedProducts] = useState([]);
+  const [firstUpdate, setFirstUpdate] = useState(true);
+  const [keepTheState, setKeepTheState] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
   const [limit, setLimit] = useState(amount);
   const [offset, setOffset] = useState(0);
@@ -20,17 +22,25 @@ export function ProductsList(
   useEffect(() => {
     function loadProducts() {
       setLoadMore(false);
+      let loadedProductsList;
 
-      if (loadedProducts.length >= products.length) {
-        return;
+      if (keepTheState) {
+        setKeepTheState(false);
+        const sliced = products.slice(0, limit);
+        loadedProductsList = [...sliced];
+      } else {
+        if (loadedProducts.length >= products.length) {
+          return;
+        }
+
+        const sliced = products.slice(offset, limit);
+        loadedProductsList = [...loadedProducts, ...sliced];
+
+        setOffset(offset + amount);
+        setLimit(limit + amount);
       }
 
-      const sliced = products.slice(offset, limit);
-      const previousLoaded = [...loadedProducts, ...sliced];
-
-      setLoadedProducts(previousLoaded);
-      setOffset(offset + amount);
-      setLimit(limit + amount);
+      setLoadedProducts(loadedProductsList);
     }
 
     if (loadMore) {
@@ -39,8 +49,20 @@ export function ProductsList(
   }, [loadMore, limit, loadedProducts, offset, products]);
 
   useEffect(() => {
+    function handleProductsListUpdate() {
+      if (firstUpdate) {
+        setLoadMore(true);
+        setFirstUpdate(false);
+      } else {
+        setKeepTheState(true);
+        setLoadMore(true);
+      }
+    }
+
     if (products && products.length) {
-      setLoadMore(true);
+      handleProductsListUpdate();
+    } else {
+      setLoadedProducts(products);
     }
   }, [products]);
 

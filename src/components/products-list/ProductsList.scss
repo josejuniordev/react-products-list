@@ -16,6 +16,15 @@
     -webkit-box-shadow: 0 10px 20px $shadow-color;
     -moz-box-shadow: 0 10px 20px $shadow-color;
     box-shadow: 0 10px 20px $shadow-color;
+    transition: all .1s;
+
+    &:active {
+      transform: scale(.95) !important;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
 
     @media (max-width: 1440px) {
       width: 30%;

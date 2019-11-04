@@ -1,28 +1,23 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import ProductCard from './product-card/ProductCard';
 import Product from '../../classes/Product';
 import './ProductsList.scss';
-import { withRouter } from 'react-router-dom';
 
 const amount = 3;
 
 export function ProductsList(
   {
     products,
-  }
+  },
 ) {
-
   const [loadedProducts, setLoadedProducts] = useState([]);
   const [loadMore, setLoadMore] = useState(false);
   const [limit, setLimit] = useState(amount);
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
-    if (loadMore) {
-      loadProducts();
-    }
-
     function loadProducts() {
       setLoadMore(false);
 
@@ -36,6 +31,10 @@ export function ProductsList(
       setLoadedProducts(previousLoaded);
       setOffset(offset + amount);
       setLimit(limit + amount);
+    }
+
+    if (loadMore) {
+      loadProducts();
     }
   }, [loadMore, limit, loadedProducts, offset, products]);
 
@@ -57,23 +56,21 @@ export function ProductsList(
     }, 500);
 
     return () => {
-      window.clearInterval(timer)
-    }
+      window.clearInterval(timer);
+    };
   }, []);
 
   return (
-    <Fragment>
-      <section className='products-list'>
+    <>
+      <section className="products-list">
         {
           loadedProducts && loadedProducts.length
             ? (
-              loadedProducts.map(product => {
-                return (
-                  <div key={product.id} className="products-list__item">
-                    <ProductCard key={product.id} product={product} />
-                  </div>
-                );
-              })
+              loadedProducts.map((product) => (
+                <div key={product.id} className="products-list__item">
+                  <ProductCard key={product.id} product={product} />
+                </div>
+              ))
             )
             : <p>Não existem produtos para exibir.</p>
         }
@@ -81,13 +78,13 @@ export function ProductsList(
       {
         loadMore && <p>carregando ...</p>
       }
-    </Fragment>
-  )
+    </>
+  );
 }
 
 ProductsList.propTypes = {
   products: PropTypes.arrayOf(
-    PropTypes.instanceOf(Product)
+    PropTypes.instanceOf(Product),
   ),
 };
 

@@ -4,6 +4,7 @@ import './App.scss';
 import { Client as Styletron } from 'styletron-engine-atomic';
 import { Provider as StyletronProvider } from 'styletron-react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import history from './history';
 import ContentBody from './components/layout/content-body/ContentBody';
 import { fetchProducts } from './ducks/products';
@@ -54,6 +55,15 @@ export function App(
     </StyletronProvider>
   );
 }
+
+App.propTypes = {
+  callFetchProducts: PropTypes.func,
+};
+
+App.defaultProps = {
+  callFetchProducts: () => {},
+};
+
 
 export const mapDispatchToProps = (dispatch) => ({
   callFetchProducts() {

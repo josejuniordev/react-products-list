@@ -6,13 +6,17 @@ describe('<ContentHeader />', () => {
   const title = 'Empresa XPTO';
   const titleComplement = 'Lista de produtos';
   const description = 'Descrição do header';
-  const renderedWrapper = render(<ContentHeader title={title} titleComplement={titleComplement} description={description} />);
+  const renderedWrapper = render(
+    <ContentHeader title={title} titleComplement={titleComplement} description={description} />,
+  );
 
   it('should render correctly', () => {
     expect(renderedWrapper).toMatchSnapshot();
   });
 
-  const wrapper = shallow(<ContentHeader title={title} titleComplement={titleComplement} description={description} />);
+  const wrapper = shallow(
+    <ContentHeader title={title} titleComplement={titleComplement} description={description} />,
+  );
 
   describe('should render a title tag correctly', () => {
     describe('with the complementary text', () => {
@@ -28,7 +32,9 @@ describe('<ContentHeader />', () => {
     });
 
     describe('without the complementary text', () => {
-      const wrapperWithoutComplement = shallow(<ContentHeader title={title} description={description} />);
+      const wrapperWithoutComplement = shallow(
+        <ContentHeader title={title} description={description} />,
+      );
       const foundTitle = wrapperWithoutComplement.find('h1');
 
       it('should have a h1 html tag', () => {

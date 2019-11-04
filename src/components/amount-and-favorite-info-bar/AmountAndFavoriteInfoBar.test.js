@@ -2,7 +2,6 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { act } from 'react-dom/test-utils';
 import { AmountAndFavoriteInfoBar } from './AmountAndFavoriteInfoBar';
-import { currencyFormat } from '../../helpers/utils';
 
 describe('<AmountAndFavoriteInfoBar />', () => {
   const amountValue = 10;

@@ -1,5 +1,10 @@
 import {
-  takeLatest, all, fork, call, put,
+  takeLatest,
+  all,
+  fork,
+  call,
+  put,
+  select,
 } from 'redux-saga/effects';
 import {
   ADD_PRODUCT_TO_FAVORITES,
@@ -10,8 +15,9 @@ import {
 } from '../ducks/products';
 import productsAPI from '../integrations/ProductsAPI';
 import Product from '../classes/Product';
-import store from '../store';
+// eslint-disable-next-line import/no-cycle
 import { updateProductFavoriteStatus } from '../helpers/products-helper';
+import { getProducts } from '../helpers/store-helper';
 
 function* fetchProductsSaga() {
   try {
@@ -29,7 +35,7 @@ function* fetchProductsSaga() {
 
 function* addProductToFavoritesSaga({ productId }) {
   try {
-    const { products } = store.getState();
+    const products = yield select(getProducts);
     const updatedProducts = updateProductFavoriteStatus(products.data, productId, true);
 
     yield put(updateProducts(updatedProducts));
@@ -40,7 +46,7 @@ function* addProductToFavoritesSaga({ productId }) {
 
 function* removeFavoriteProductSaga({ productId }) {
   try {
-    const { products } = store.getState();
+    const products = yield select(getProducts);
     const updatedProducts = updateProductFavoriteStatus(products.data, productId, false);
 
     yield put(updateProducts(updatedProducts));

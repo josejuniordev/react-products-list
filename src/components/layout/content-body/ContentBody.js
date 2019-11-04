@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ContentBody.scss';
 
 function ContentBody(
@@ -12,5 +13,13 @@ function ContentBody(
     </div>
   );
 }
+
+ContentBody.propTypes = {
+  children: PropTypes.element,
+};
+
+ContentBody.defaultProps = {
+  children: null,
+};
 
 export default ContentBody;

@@ -1,5 +1,6 @@
 import React from 'react';
 import './LayoutContainer.scss';
+import PropTypes from 'prop-types';
 
 function LayoutContainer(
   {
@@ -12,5 +13,13 @@ function LayoutContainer(
     </div>
   );
 }
+
+LayoutContainer.propTypes = {
+  children: PropTypes.element,
+};
+
+LayoutContainer.defaultProps = {
+  children: null,
+};
 
 export default LayoutContainer;

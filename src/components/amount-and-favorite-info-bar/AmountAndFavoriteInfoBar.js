@@ -35,16 +35,20 @@ export function AmountAndFavoriteInfoBar(
   );
 }
 
-Switch.propTypes = {
+AmountAndFavoriteInfoBar.propTypes = {
   amount: PropTypes.number,
   isFavorite: PropTypes.bool,
   productId: PropTypes.number,
+  sendToFavorites: PropTypes.func,
+  removeFromFavorites: PropTypes.func,
 };
 
-Switch.defaultProps = {
+AmountAndFavoriteInfoBar.defaultProps = {
   amount: 0,
   isFavorite: false,
   productId: 0,
+  sendToFavorites: () => {},
+  removeFromFavorites: () => {},
 };
 
 export default connect(

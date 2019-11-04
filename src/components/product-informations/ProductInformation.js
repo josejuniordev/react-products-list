@@ -1,8 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ProductInformation.scss';
 import ImageDisplay from '../product-parts/image-display/ImageDisplay';
 import ContentHeader from '../layout/content-header/ContentHeader';
 import { componentsSizes } from '../../constants/components-sizes';
+import Product from '../../classes/Product';
+import { generateStringKey } from '../../helpers/utils';
 
 function ProductInformation(
   {
@@ -25,8 +28,8 @@ function ProductInformation(
         <ul className="product-information__datasheet-list">
           {
             product.datasheet && product.datasheet.length
-              && product.datasheet.map((item, index) => (
-                <li key={index}>
+              && product.datasheet.map((item) => (
+                <li key={generateStringKey(item.titulo)}>
                   <span>
                     {item.titulo}
 :
@@ -41,5 +44,13 @@ function ProductInformation(
     </article>
   );
 }
+
+ProductInformation.propTypes = {
+  product: PropTypes.arrayOf(Product),
+};
+
+ProductInformation.defaultProps = {
+  product: null,
+};
 
 export default ProductInformation;

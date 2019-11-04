@@ -26,7 +26,7 @@ export function ProductsList(
 
       if (keepTheState) {
         setKeepTheState(false);
-        const sliced = products.slice(0, limit);
+        const sliced = products.slice(0, limit - amount);
         loadedProductsList = [...sliced];
       } else {
         if (loadedProducts.length >= products.length) {

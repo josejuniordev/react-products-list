@@ -6,7 +6,7 @@ import { currencyFormat } from '../../helpers/utils';
 import { addProductToFavorites, removeFavoriteProduct } from '../../ducks/products';
 import { connect } from 'react-redux';
 
-function AmountAndFavoriteInfoBar(
+export function AmountAndFavoriteInfoBar(
   {
     amount,
     isFavorite,

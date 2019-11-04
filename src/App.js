@@ -1,11 +1,11 @@
 import React, { Suspense, useEffect } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 import './App.scss';
-import {Client as Styletron} from 'styletron-engine-atomic';
-import history from './history';
-import ContentBody from './components/layout/content-body/ContentBody';
+import { Client as Styletron } from 'styletron-engine-atomic';
 import { Provider as StyletronProvider } from 'styletron-react';
 import { connect } from 'react-redux';
+import history from './history';
+import ContentBody from './components/layout/content-body/ContentBody';
 import { fetchProducts } from './ducks/products';
 import LayoutContainer from './components/layout/layout-container/LayoutContainer';
 import Navbar from './components/layout/navbar/Navbar';
@@ -21,10 +21,9 @@ const engine = new Styletron();
 
 export function App(
   {
-    callFetchProducts
-  }
+    callFetchProducts,
+  },
 ) {
-
   useEffect(() => {
     callFetchProducts();
   }, [callFetchProducts]);
@@ -32,23 +31,23 @@ export function App(
   return (
     <StyletronProvider value={engine}>
       <LayoutContainer>
-        <Router history={history} basename=''>
+        <Router history={history} basename="">
           <Navbar links={navigationLinks} />
 
           <ContentBody>
-              <Switch>
-                <Suspense
-                  fallback={
-                    <p>carregando...</p>
+            <Switch>
+              <Suspense
+                fallback={
+                  <p>carregando...</p>
                   }
-                >
-                  <Route exact path={`${process.env.PUBLIC_URL}/`} component={HomePage} />
-                  <Route exact path={`${process.env.PUBLIC_URL}/exclusive`} component={ExclusivesPage} />
-                  <Route exact path={`${process.env.PUBLIC_URL}/on-sale`} component={OnSalePage} />
-                  <Route exact path={`${process.env.PUBLIC_URL}/favorites`} component={FavoritesPage} />
-                  <Route exact path={`${process.env.PUBLIC_URL}/product/:id`} component={ProductPage} />
-                </Suspense>
-              </Switch>
+              >
+                <Route exact path={`${process.env.PUBLIC_URL}/`} component={HomePage} />
+                <Route exact path={`${process.env.PUBLIC_URL}/exclusive`} component={ExclusivesPage} />
+                <Route exact path={`${process.env.PUBLIC_URL}/on-sale`} component={OnSalePage} />
+                <Route exact path={`${process.env.PUBLIC_URL}/favorites`} component={FavoritesPage} />
+                <Route exact path={`${process.env.PUBLIC_URL}/product/:id`} component={ProductPage} />
+              </Suspense>
+            </Switch>
           </ContentBody>
         </Router>
       </LayoutContainer>
@@ -56,13 +55,11 @@ export function App(
   );
 }
 
-export const mapDispatchToProps = dispatch => {
-  return {
-    callFetchProducts() {
-      dispatch(fetchProducts());
-    }
-  }
-};
+export const mapDispatchToProps = (dispatch) => ({
+  callFetchProducts() {
+    dispatch(fetchProducts());
+  },
+});
 
 export default connect(
   false,

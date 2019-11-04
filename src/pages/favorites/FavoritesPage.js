@@ -1,16 +1,24 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import ContentHeader from '../../components/layout/content-header/ContentHeader';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import ContentHeader from '../../components/layout/content-header/ContentHeader';
 import ProductsList from '../../components/products-list/ProductsList';
 import SearchBar from '../../components/search-bar/SearchBar';
 
 export function FavoritesPage(
   {
     products,
-  }
+  },
 ) {
   const [productsData, setProductsData] = useState([]);
   const [FavoritesProducts, setFavoritesProducts] = useState([]);
+
+  function filterProducts(productsList = []) {
+    return productsList.filter((product) => product.favorite);
+  }
+
+  function onSearchHandler(data) {
+    setProductsData(data);
+  }
 
   useEffect(() => {
     const filtered = filterProducts(products.data);
@@ -18,20 +26,12 @@ export function FavoritesPage(
     setProductsData(filtered);
   }, [products]);
 
-  function filterProducts(products = []) {
-    return products.filter(product => product.favorite);
-  }
-
-  function onSearchHandler(data) {
-    setProductsData(data);
-  }
-
   return (
-    <Fragment>
+    <>
       <ContentHeader
-        title='Empresa XPTO'
-        titleComplement='Meus favoritos'
-        description='Listagem de produtos marcados como favoritos - clique no produto desejado para saber mais'
+        title="Empresa XPTO"
+        titleComplement="Meus favoritos"
+        description="Listagem de produtos marcados como favoritos - clique no produto desejado para saber mais"
         endEnhancer={<SearchBar data={FavoritesProducts} onSearch={onSearchHandler} />}
       />
 
@@ -40,8 +40,8 @@ export function FavoritesPage(
           ? <p>Buscando produtos...</p>
           : <ProductsList products={productsData} />
       }
-    </Fragment>
-  )
+    </>
+  );
 }
 
-export default connect(({ products }) => ({products}))(FavoritesPage);
+export default connect(({ products }) => ({ products }))(FavoritesPage);

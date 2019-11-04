@@ -12,9 +12,8 @@ function ContentHeader(
     startEnhancer,
     endEnhancer,
     size,
-  }
+  },
 ) {
-
   const StartEnhancer = startEnhancer;
   const EndEnhancer = endEnhancer;
 
@@ -24,12 +23,16 @@ function ContentHeader(
   });
   return (
     <header className={classname}>
-      <div className='content-header__container'>
-        <h1 className='content-header__title'>
+      <div className="content-header__container">
+        <h1 className="content-header__title">
           {title}
           {
             titleComplement && (
-              <span className='content-header__title-complement'> - {titleComplement}</span>
+              <span className="content-header__title-complement">
+                {' '}
+-
+                {titleComplement}
+              </span>
             )
           }
         </h1>
@@ -52,9 +55,9 @@ function ContentHeader(
 
       </div>
 
-      { description && <p className='content-header__description'>{description}</p> }
+      { description && <p className="content-header__description">{description}</p> }
     </header>
-  )
+  );
 }
 
 ContentHeader.propTypes = {

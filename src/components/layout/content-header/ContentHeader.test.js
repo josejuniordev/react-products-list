@@ -1,6 +1,6 @@
 import { shallow, render } from 'enzyme';
-import ContentHeader from './ContentHeader';
 import React from 'react';
+import ContentHeader from './ContentHeader';
 
 describe('<ContentHeader />', () => {
   const title = 'Empresa XPTO';
@@ -63,5 +63,5 @@ describe('<ContentHeader />', () => {
     it('should have the right title text', () => {
       expect(foundHeaderDescription.text()).toEqual(description);
     });
-  })
+  });
 });

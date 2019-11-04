@@ -8,5 +8,5 @@ export default {
 };
 
 export const inactive = () => <Switch onChange={action('switched')} />;
-export const active = () => <Switch onChange={action('switched')} checked/>;
-export const withLabel = () => <Switch label='favorito?' onChange={action('switched')} checked/>;
+export const active = () => <Switch onChange={action('switched')} checked />;
+export const withLabel = () => <Switch label="favorito?" onChange={action('switched')} checked />;

@@ -1,4 +1,4 @@
-export class LocalstorageHelper {
+export default class LocalstorageHelper {
   static setData(key, value) {
     if (!key || !value) {
       throw new Error('key and value are requireds!');

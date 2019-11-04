@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/prefer-default-export
 export const navigationLinks = [
   {
     text: '',
@@ -28,5 +29,5 @@ export const navigationLinks = [
     image: '/images/recommended@2x.png',
     isLogo: false,
     route: '/favorites',
-  }
+  },
 ];

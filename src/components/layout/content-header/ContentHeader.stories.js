@@ -10,39 +10,33 @@ export default {
   title: 'ContentHeader',
 };
 
-export const somenteTituloEPequeno = () => {
-  return (
-    <ContentBody>
-      <ContentHeader
-        title='XPTO Company'
-        size='small'
-      />
-    </ContentBody>
-  )
-};
+export const somenteTituloEPequeno = () => (
+  <ContentBody>
+    <ContentHeader
+      title="XPTO Company"
+      size="small"
+    />
+  </ContentBody>
+);
 
-export const tituloComplementoEDescricao = () => {
-  return (
-    <ContentBody>
-      <ContentHeader
-        title='XPTO Company'
-        titleComplement='Veja os produtos'
-        description='Aqui você pode ver como tudo funciona direitinho'
-      />
-    </ContentBody>
-  )
-};
+export const tituloComplementoEDescricao = () => (
+  <ContentBody>
+    <ContentHeader
+      title="XPTO Company"
+      titleComplement="Veja os produtos"
+      description="Aqui você pode ver como tudo funciona direitinho"
+    />
+  </ContentBody>
+);
 
-export const comEnhancersNaDireitaOuEsquerda = () => {
-  return (
-    <ContentBody>
-      <ContentHeader
-        title='XPTO Company'
-        titleComplement='Veja os produtos'
-        description='Aqui você pode ver como tudo funciona direitinho'
-        startEnhancer={<p style={{margin: 0}}>na esquerda</p>}
-        endEnhancer={<SearchBar />}
-      />
-    </ContentBody>
-  )
-};
+export const comEnhancersNaDireitaOuEsquerda = () => (
+  <ContentBody>
+    <ContentHeader
+      title="XPTO Company"
+      titleComplement="Veja os produtos"
+      description="Aqui você pode ver como tudo funciona direitinho"
+      startEnhancer={<p style={{ margin: 0 }}>na esquerda</p>}
+      endEnhancer={<SearchBar />}
+    />
+  </ContentBody>
+);

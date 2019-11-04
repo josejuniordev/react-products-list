@@ -1,9 +1,11 @@
+// eslint-disable-next-line import/prefer-default-export
 export function updateProductFavoriteStatus(products = [], targetId, value) {
-  return products.map(product => {
+  return products.map((product) => {
+    const modifiedProduct = { ...product };
     if (product.id === targetId) {
-      product.favorite = value;
+      modifiedProduct.favorite = value;
     }
 
-    return product;
+    return modifiedProduct;
   });
 }

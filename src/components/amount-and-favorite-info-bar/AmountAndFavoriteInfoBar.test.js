@@ -1,8 +1,8 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import {AmountAndFavoriteInfoBar} from './AmountAndFavoriteInfoBar';
+import { act } from 'react-dom/test-utils';
+import { AmountAndFavoriteInfoBar } from './AmountAndFavoriteInfoBar';
 import { currencyFormat } from '../../helpers/utils';
-import {act} from 'react-dom/test-utils';
 
 describe('<AmountAndFavoriteInfoBar />', () => {
   const amountValue = 10;
@@ -10,7 +10,7 @@ describe('<AmountAndFavoriteInfoBar />', () => {
 
   act(() => {
     rendered = shallow(<AmountAndFavoriteInfoBar amount={amountValue} />);
-  })
+  });
 
   it('should render correctly', () => {
     expect(rendered).toMatchSnapshot();

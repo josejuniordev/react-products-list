@@ -9,11 +9,10 @@ function SearchBar(
     onSearch = () => {},
     data,
     valueKey,
-  }
+  },
 ) {
-
   function onSearchHandler(ev) {
-    const value = ev.target.value;
+    const { value } = ev.target;
 
     if (!value) {
       onSearch(data);
@@ -21,24 +20,23 @@ function SearchBar(
     }
 
     const regex = new RegExp(value, 'ig');
-    const filtered = data.filter(item => item[valueKey].match(regex));
-
-    onSearch(filtered);
+    const filtered = data.filter((item) => item[valueKey].match(regex));
+    return onSearch(filtered);
   }
 
   return (
-    <div className='search-bar'>
-      <button className='search-bar__button'>
-        <img className='search-bar__icon' alt='Ícone de busca' src={loupeIcon} />
+    <div className="search-bar">
+      <button className="search-bar__button">
+        <img className="search-bar__icon" alt="Ícone de busca" src={loupeIcon} />
       </button>
       <input
-        placeholder='Buscar'
-        className='search-bar__input'
+        placeholder="Buscar"
+        className="search-bar__input"
         onChange={onSearchHandler}
-        type='text'
+        type="text"
       />
     </div>
-  )
+  );
 }
 
 SearchBar.propTypes = {
@@ -50,6 +48,7 @@ SearchBar.propTypes = {
 SearchBar.defaultProps = {
   data: [],
   valueKey: 'name',
+  onSearch: () => {},
 };
 
 export default memo(SearchBar);

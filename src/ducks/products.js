@@ -16,12 +16,12 @@ export const INITIAL_STATE = {
   loading: {
     fetch: false,
     favorites: false,
-  }
+  },
 };
 
 // REDUCER
-export default function(state = INITIAL_STATE, action) {
-  const {type, products, errors} = action;
+export default function (state = INITIAL_STATE, action) {
+  const { type, products, errors } = action;
 
   switch (type) {
     case FETCH_PRODUCTS:
@@ -78,30 +78,29 @@ export default function(state = INITIAL_STATE, action) {
     default:
       return state;
   }
-};
+}
 
 // ACTION CREATORS
 export function fetchProducts() {
-  return {type: FETCH_PRODUCTS}
+  return { type: FETCH_PRODUCTS };
 }
 
 export function fetchProductsSuccess(products = []) {
-  return {type: FETCH_PRODUCTS_SUCCESS, products}
+  return { type: FETCH_PRODUCTS_SUCCESS, products };
 }
 
 export function fetchProductsFailed(errors = []) {
-  return {type: FETCH_PRODUCTS_FAILED, errors}
+  return { type: FETCH_PRODUCTS_FAILED, errors };
 }
 
 export function addProductToFavorites(productId) {
-  return {type: ADD_PRODUCT_TO_FAVORITES, productId}
+  return { type: ADD_PRODUCT_TO_FAVORITES, productId };
 }
 
 export function updateProducts(products) {
-  return {type: UPDATE_PRODUCTS, products}
+  return { type: UPDATE_PRODUCTS, products };
 }
 
 export function removeFavoriteProduct(productId) {
-  return {type: REMOVE_FAVORITE_PRODUCT, productId}
+  return { type: REMOVE_FAVORITE_PRODUCT, productId };
 }
-

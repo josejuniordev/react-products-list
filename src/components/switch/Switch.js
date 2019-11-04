@@ -7,7 +7,7 @@ function Switch(
     checked,
     label,
     onChange = () => {},
-  }
+  },
 ) {
   const [id] = useState(+new Date());
   const [checkedState, setCheckedState] = useState(checked);
@@ -22,12 +22,12 @@ function Switch(
   }
 
   return (
-    <div className='switch-checkbox'>
-      <input checked={checkedState} onChange={(event) => onChangeHandler(event.target.checked)} id={id} className='switch-checkbox__input' type="checkbox"/>
-      <label htmlFor={id} className='switch-checkbox__switch'></label>
-      <span onClick={onClickHandler} className='switch-checkbox__label'>{label}</span>
+    <div className="switch-checkbox">
+      <input checked={checkedState} onChange={(event) => onChangeHandler(event.target.checked)} id={id} className="switch-checkbox__input" type="checkbox" />
+      <label htmlFor={id} className="switch-checkbox__switch" />
+      <span onClick={onClickHandler} className="switch-checkbox__label">{label}</span>
     </div>
-  )
+  );
 }
 
 Switch.propTypes = {
@@ -39,6 +39,7 @@ Switch.propTypes = {
 Switch.defaultProps = {
   checked: false,
   label: '',
+  onChange: () => {},
 };
 
 export default Switch;

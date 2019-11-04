@@ -1,17 +1,17 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import {ProductsList} from './ProductsList';
+import { Provider } from 'react-redux';
+import { Router } from 'react-router-dom';
+import { ProductsList } from './ProductsList';
 import { productsMock } from '../../mock/products-mock';
 import ProductCard from './product-card/ProductCard';
 import Product from '../../classes/Product';
 import store from '../../store';
-import { Provider } from 'react-redux';
-import { Router } from 'react-router-dom';
 import history from '../../history';
 
 describe('<ProductsList />', () => {
   describe('with products', () => {
-    const products = productsMock.map(product => new Product(product));
+    const products = productsMock.map((product) => new Product(product));
     let testableMethods;
 
     const renderedWrapper = mount(
@@ -19,7 +19,7 @@ describe('<ProductsList />', () => {
         <Router history={history}>
           <ProductsList giveTestAccess={(values) => testableMethods = values} products={products} />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     it('should render correctly', () => {
@@ -31,7 +31,6 @@ describe('<ProductsList />', () => {
 
       expect(renderedWrapper.find(ProductCard).length).toBe(infiniteLoaderInitialNumber);
     });
-
   });
 
   describe('without products', () => {
@@ -40,7 +39,7 @@ describe('<ProductsList />', () => {
         <Router history={history}>
           <ProductsList products={[]} />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     it('should render correctly', () => {
@@ -49,6 +48,6 @@ describe('<ProductsList />', () => {
 
     it('should render no products', () => {
       expect(renderedWrapper.find(ProductCard).length).toBe(0);
-    })
-  })
+    });
+  });
 });

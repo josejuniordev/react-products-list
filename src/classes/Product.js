@@ -1,6 +1,6 @@
 export default class Product {
   constructor(
-    data
+    data,
   ) {
     this.shortDescription = data.decricaoCurta;
     this.longDescription = data.descricaoLonga;
@@ -13,5 +13,4 @@ export default class Product {
     this.amount = data.valor;
     this.favorite = data.favorite || false;
   }
-
 }

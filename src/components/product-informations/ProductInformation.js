@@ -6,10 +6,9 @@ import { componentsSizes } from '../../constants/components-sizes';
 
 function ProductInformation(
   {
-    product
-  }
+    product,
+  },
 ) {
-
   return (
     <article className="product-information">
       <section className="product-information__image-and-details">
@@ -22,18 +21,25 @@ function ProductInformation(
         </div>
       </section>
       <section className="product-information__datasheet">
-        <ContentHeader size={componentsSizes.SMALL} title='Ficha técnica' />
+        <ContentHeader size={componentsSizes.SMALL} title="Ficha técnica" />
         <ul className="product-information__datasheet-list">
           {
             product.datasheet && product.datasheet.length
-              && product.datasheet.map((item, index) => {
-                return <li key={index}><span>{item.titulo}:</span> {item.descricao}</li>
-            })
+              && product.datasheet.map((item, index) => (
+                <li key={index}>
+                  <span>
+                    {item.titulo}
+:
+                  </span>
+                  {' '}
+                  {item.descricao}
+                </li>
+              ))
           }
         </ul>
       </section>
     </article>
-  )
+  );
 }
 
 export default ProductInformation;

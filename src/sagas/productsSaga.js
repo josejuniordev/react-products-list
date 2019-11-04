@@ -1,11 +1,13 @@
 import {
+  takeLatest, all, fork, call, put,
+} from 'redux-saga/effects';
+import {
   ADD_PRODUCT_TO_FAVORITES,
   FETCH_PRODUCTS,
   fetchProductsFailed,
   fetchProductsSuccess,
-  REMOVE_FAVORITE_PRODUCT, updateProducts
+  REMOVE_FAVORITE_PRODUCT, updateProducts,
 } from '../ducks/products';
-import { takeLatest, all, fork, call, put } from 'redux-saga/effects';
 import productsAPI from '../integrations/ProductsAPI';
 import Product from '../classes/Product';
 import store from '../store';
@@ -16,7 +18,7 @@ function* fetchProductsSaga() {
     const products = yield call(productsAPI.getAll);
 
     if (products) {
-      const productsInstance = products.produtos.map(product => new Product(product));
+      const productsInstance = products.produtos.map((product) => new Product(product));
       yield put(fetchProductsSuccess(productsInstance));
     }
   } catch (errors) {
@@ -27,11 +29,10 @@ function* fetchProductsSaga() {
 
 function* addProductToFavoritesSaga({ productId }) {
   try {
-    const {products} = store.getState();
+    const { products } = store.getState();
     const updatedProducts = updateProductFavoriteStatus(products.data, productId, true);
 
     yield put(updateProducts(updatedProducts));
-
   } catch (errors) {
     console.error(errors);
   }
@@ -39,11 +40,10 @@ function* addProductToFavoritesSaga({ productId }) {
 
 function* removeFavoriteProductSaga({ productId }) {
   try {
-    const {products} = store.getState();
+    const { products } = store.getState();
     const updatedProducts = updateProductFavoriteStatus(products.data, productId, false);
 
     yield put(updateProducts(updatedProducts));
-
   } catch (errors) {
     console.error(errors);
   }
@@ -66,5 +66,5 @@ export default function* () {
     fork(watchFetchProducts),
     fork(watchAddProductToFavorites),
     fork(watchRemoveFavoriteProduct),
-  ])
+  ]);
 }

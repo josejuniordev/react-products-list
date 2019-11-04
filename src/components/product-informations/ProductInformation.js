@@ -46,7 +46,7 @@ function ProductInformation(
 }
 
 ProductInformation.propTypes = {
-  product: PropTypes.arrayOf(Product),
+  product: PropTypes.instanceOf(Product),
 };
 
 ProductInformation.defaultProps = {

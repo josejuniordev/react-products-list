@@ -12,12 +12,11 @@ import history from '../../history';
 describe('<ProductsList />', () => {
   describe('with products', () => {
     const products = productsMock.map((product) => new Product(product));
-    let testableMethods;
 
     const renderedWrapper = mount(
       <Provider store={store}>
         <Router history={history}>
-          <ProductsList giveTestAccess={(values) => testableMethods = values} products={products} />
+          <ProductsList products={products} />
         </Router>
       </Provider>,
     );

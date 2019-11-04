@@ -29,9 +29,7 @@ function ContentHeader(
           {
             titleComplement && (
               <span className="content-header__title-complement">
-                {' '}
--
-                {titleComplement}
+                {` - ${titleComplement}`}
               </span>
             )
           }

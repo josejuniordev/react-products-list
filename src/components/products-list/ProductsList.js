@@ -46,7 +46,7 @@ export function ProductsList(
     if (loadMore) {
       loadProducts();
     }
-  }, [loadMore, limit, loadedProducts, offset, products]);
+  }, [loadMore, limit, loadedProducts, offset, products, keepTheState]);
 
   useEffect(() => {
     function handleProductsListUpdate() {
@@ -64,7 +64,7 @@ export function ProductsList(
     } else {
       setLoadedProducts(products);
     }
-  }, [products]);
+  }, [products, firstUpdate]);
 
   useEffect(() => {
     const wrapper = document.querySelector('.layout-container');

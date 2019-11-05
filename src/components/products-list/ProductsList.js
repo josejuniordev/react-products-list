@@ -82,14 +82,30 @@ function ProductsList(
     };
   }, []);
 
+  function handleMouseClicks(ev) {
+    const { currentTarget, target } = ev;
+    const expectedTag = 'A';
+
+    if (target.tagName === expectedTag) {
+      currentTarget.classList.toggle('active');
+    }
+  }
+
   return (
     <>
       <section className="products-list">
         {
           loadedProducts && loadedProducts.length
             ? (
-              loadedProducts.map((product) => (
-                <div key={product.id} className="products-list__item">
+              loadedProducts.map((product, index) => (
+                <div
+                  onMouseDown={handleMouseClicks}
+                  onMouseUp={handleMouseClicks}
+                  key={product.id}
+                  role="button"
+                  tabIndex={index}
+                  className="products-list__item"
+                >
                   <ProductCard key={product.id} product={product} />
                 </div>
               ))
